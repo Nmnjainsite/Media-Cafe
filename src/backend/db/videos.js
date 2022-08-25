@@ -4,18 +4,45 @@
  * */
 
 export const videos = [
+  // ----------------TEDx-----------------------
   {
     _id: "Wo5dMEP_BbI",
-    title: "Awesome Video about Coding",
+    title: "Shah Rukh Khan",
+    src: "https://www.youtube.com/embed/0NV1KdWRHck",
     description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    creator: "Soham Shah",
+      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+    category: "Tedx",
   },
   {
     _id: "F_Riqjdh2oM",
-    title: "Neural Networks from Scratch - P.1 Intro and Neuron Code",
-    creator: "Sentdex",
+    title: "Dr. Shashi Tharoor",
+    src: "https://www.youtube.com/embed/kcW4ABcY3zI",
     description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+    category: "Tedx",
+  },
+  {
+    _id: "F_Riqjdh2oM",
+    title: "Ayush Mehra ",
+    src: "https://www.youtube.com/embed/le6eNngljto",
+    description:
+      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+    category: "Tedx",
+  },
+  {
+    _id: "F_Riqjdh2oM",
+    title: "Aman Dhattarwal ",
+    src: "https://www.youtube.com/embed/Y7qzo1WMcxs",
+    description:
+      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+    category: "Tedx",
+  },
+  {
+    _id: "F_Riqjdh2oM",
+    title: " Julian Treasure ",
+    src: "https://www.youtube.com/embed/eIho2S0ZahI",
+    description:
+      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+    category: "Tedx",
   },
 ];

@@ -1,0 +1,26 @@
+.landing-nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  margin: 1rem;
+}
+.landing-nav > img {
+  width: 100%;
+}
+.explore-btn {
+  background-color: turquoise;
+  color: #262626;
+  padding: 1rem;
+  text-decoration: none;
+  width: 40%;
+  border-radius: 0.3rem;
+  font-size: 1.3rem;
+  font-family: "Signika Negative", sans-serif;
+  cursor: pointer;
+}
+
+.explore-btn:hover {
+  background-color: #262626;
+  color: turquoise;
+}

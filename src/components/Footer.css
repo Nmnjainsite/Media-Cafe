@@ -1,0 +1,15 @@
+footer {
+  color: white;
+  border-top: 1px solid #262626;
+  font-size: 1.2rem;
+}
+
+footer > a {
+  margin: 0.8rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+footer > a:hover {
+  color: grey;
+}
