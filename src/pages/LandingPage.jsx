@@ -3,9 +3,8 @@ import HeaderNav from "../components/Header";
 import landingPageImg from "../assets/landing-page.jpg";
 import "./LandingPage.css";
 import Footer from "../components/Footer";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 function LandingPage() {
-  const navigate = useNavigate;
   return (
     <div>
       <section>
@@ -15,7 +14,7 @@ function LandingPage() {
             Explore
           </Link>
 
-          <img src={landingPageImg}></img>
+          <img src={landingPageImg} alt=""></img>
         </div>
 
         <Footer />

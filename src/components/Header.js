@@ -3,9 +3,11 @@ import "./HeaderNav.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useFilter } from "../context/filter-context";
 
 const HeaderNav = () => {
   const [modal, showModal] = useState(true);
+  const [{ state, category, serachValue }, dispatch] = useFilter();
 
   return (
     <>
@@ -26,7 +28,7 @@ const HeaderNav = () => {
         </div>
 
         <nav className="nav-links">
-          <Link to="/" className="links-nav">
+          <Link to="/likepage" className="links-nav">
             Like
           </Link>
           <Link to="/" className="links-nav">
@@ -46,23 +48,60 @@ const HeaderNav = () => {
       </div>
       <div className="header-bottom-container">
         <div>
-          <Link to="/" className="links-nav">
+          <span
+            className="links-nav"
+            onClick={() => dispatch({ type: "FITER_BY_HOME" })}
+          >
             Home
-          </Link>
-          <Link to="/" className="links-nav">
-            Stocks
-          </Link>
-          <Link to="/" className="links-nav">
-            TEDx
-          </Link>
-          <Link to="/" className="links-nav">
+          </span>
+          <span
+            className="links-nav"
+            onClick={() =>
+              dispatch({
+                type: "FITER_BY_CATEGORY",
+                payload: "FILTER_BY_CODING",
+              })
+            }
+          >
+            Coding
+          </span>
+          <span
+            className="links-nav"
+            onClick={() =>
+              dispatch({
+                type: "FITER_BY_CATEGORY",
+                payload: "FILTER_BY_FINANCE",
+              })
+            }
+          >
             Finance
-          </Link>
-          <Link to="/" className="links-nav">
-            Crypto
-          </Link>
+          </span>
+          <span
+            className="links-nav"
+            onClick={() =>
+              dispatch({ type: "FITER_BY_CATEGORY", payload: "FILTER_BY_TED" })
+            }
+          >
+            TEDx
+          </span>
+          <span
+            className="links-nav"
+            onClick={() =>
+              dispatch({
+                type: "FITER_BY_CATEGORY",
+                payload: "FILTER_BY_VIDEOGRAPHY",
+              })
+            }
+          >
+            Videography
+          </span>
         </div>
-        <input placeholder="search your genre and videos " />
+        <input
+          placeholder="search your genre and videos "
+          onChange={(e) =>
+            dispatch({ type: "FILTER_BY_SEARCH", payload: e.target.value })
+          }
+        />
       </div>
     </>
   );
