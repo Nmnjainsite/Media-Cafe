@@ -124,8 +124,8 @@ export const videos = [
 
   {
     _id: "F_Riqjdh2oM",
-    title: "Robert Kiyosaki",
-    src: "https://www.youtube.com/embed/zNTNWQmf1DE",
+    title: "https://www.youtube.com/embed/Robert Kiyosaki",
+    src: "zNTNWQmf1DE",
     description:
       " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
     category: "Finance",

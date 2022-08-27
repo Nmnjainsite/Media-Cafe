@@ -1,12 +1,17 @@
 import React from "react";
 import { useLike } from "../context/like-context";
 import LikeCard from "./likeCard";
+import HeaderNav from "../components/Header";
 const LikePage = () => {
-  const { likeState, likeDispatch } = useLike();
+  const {
+    likeState: { likeItem },
+    likeDispatch,
+  } = useLike();
 
   return (
     <>
-      {likeState.likeItem.map((item) => (
+      <HeaderNav />
+      {likeItem.map((item) => (
         <LikeCard videos={item} />
       ))}
     </>

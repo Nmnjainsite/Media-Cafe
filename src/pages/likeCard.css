@@ -14,3 +14,13 @@
   margin-left: auto;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .likepage-container {
+    display: flex;
+    width: 80%;
+  }
+  .iframe-only {
+    width: 50%;
+  }
+}

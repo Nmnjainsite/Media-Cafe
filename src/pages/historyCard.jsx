@@ -1,10 +1,10 @@
 import React from "react";
 import "./likeCard.css";
 import { AiFillDelete } from "react-icons/ai";
-import { useLike } from "../context/like-context";
-const LikeCard = ({ videos }) => {
+import { useHistory } from "../context/history-context";
+const HistoryCard = ({ videos }) => {
   const { _id, src, title, description } = videos;
-  const { likeDispatch } = useLike();
+  const { historyDispatch } = useHistory();
   return (
     <div className="likepage-container">
       <div id="likepage-container-skin">
@@ -12,7 +12,6 @@ const LikeCard = ({ videos }) => {
           title="Inline Frame Example"
           width="350"
           height="200"
-          className="iframe-only"
           src={src}
           key="iframe_src"
           frameBorder="0"
@@ -21,14 +20,13 @@ const LikeCard = ({ videos }) => {
         ></iframe>
 
         <div key={description}>
-          {" "}
           <p key={title}>{title}</p>
           {description}
         </div>
         <span className="delete-icon">
           <AiFillDelete
             onClick={() =>
-              likeDispatch({ type: "REMOVE_FROM_LIKE", payload: _id })
+              historyDispatch({ type: "REMOVE_FROM_HISTORY", payload: _id })
             }
           ></AiFillDelete>{" "}
         </span>
@@ -37,4 +35,4 @@ const LikeCard = ({ videos }) => {
   );
 };
 
-export default LikeCard;
+export default HistoryCard;

@@ -15,6 +15,7 @@ body {
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   width: 100%;
   font-family: "Signika Negative", sans-serif;
+  border-bottom: 1px solid #262626;
 }
 
 .app-title {
@@ -23,10 +24,12 @@ body {
   flex-wrap: wrap;
 }
 
-.app-title > h1 {
+.title {
   margin-left: 0.5rem;
   cursor: pointer;
   font-family: "Arvo", sans-serif;
+  color: turquoise;
+  text-decoration: none;
 }
 
 .app-title > img:hover {
@@ -100,7 +103,44 @@ body {
   display: none;
 }
 
-@media (max-width: 820px) {
+.length-value {
+  position: relative;
+  bottom: 1.2rem;
+  background-color: turquoise;
+  color: #262626;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6rem;
+  outline: 0;
+  right: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.length-value-playlist {
+  position: relative;
+  bottom: 1.3rem;
+  background-color: turquoise;
+  color: #262626;
+  padding: 0.3rem 0.4rem;
+  padding-left: 0.5rem;
+  border-radius: 6rem;
+  outline: 0;
+  right: 0.4rem;
+  font-size: 0.8rem;
+}
+.length-value-watch {
+  position: relative;
+  bottom: 1.3rem;
+  background-color: turquoise;
+  color: #262626;
+  padding: 0.3rem 0.4rem;
+  padding-left: 0.5rem;
+  border-radius: 6rem;
+  outline: 0;
+  right: 0.4rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 850px) {
   .header-top-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -108,17 +148,31 @@ body {
     font-size: 1rem;
   }
   .nav-links {
-    margin: 0rem;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
+
   .links-nav {
     margin: 0.5rem;
   }
+  .header-top-container > article {
+    margin-left: auto;
+  }
+  /* .length-value-watch {
+    position: relative;
+    bottom: 2.5rem;
+    background-color: turquoise;
+    color: #262626;
+    padding: 0.3rem 0.4rem;
+    padding-left: 0.5rem;
+    border-radius: 6rem;
+    outline: 0;
+    left: 2.5rem;
+    font-size: 0.8rem;
+  } */
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .header-top-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -131,10 +185,6 @@ body {
 
   .header-top-container > article {
     display: none;
-  }
-
-  .header-bottom-container {
-    margin-top: 0.2rem;
   }
 
   .header-bottom-container > input {

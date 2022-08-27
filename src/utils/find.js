@@ -1,5 +1,5 @@
-const findItem = (products, id) => {
-  return products.find((product) => product.id === id);
+const getProductDetails = (products, id) => {
+  return products.find((product) => product._id === id);
 };
 
-export default findItem;
+export default getProductDetails;

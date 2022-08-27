@@ -1,14 +1,24 @@
 import React from "react";
 import "./HeaderNav.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useFilter } from "../context/filter-context";
-
+import { useLike } from "../context/like-context";
+import { usePlaylist } from "../context/playlist-context";
+import { useWatch } from "../context/watchLater-context";
+import { AiFillAccountBook } from "react-icons/ai";
 const HeaderNav = () => {
   const [modal, showModal] = useState(true);
-  const [{ state, category, serachValue }, dispatch] = useFilter();
-
+  const {
+    likeState: { likeItem },
+  } = useLike();
+  const {
+    playlistState: { playlistItem },
+  } = usePlaylist();
+  const {
+    watchState: { watchItem },
+  } = useWatch();
+  const navigate = useNavigate;
   return (
     <>
       <div className="header-top-container">
@@ -19,7 +29,10 @@ const HeaderNav = () => {
               width: "3rem",
             }}
           ></img>
-          <h1> MediaCafe </h1>
+          <Link to="/" className="title">
+            <h1> MediaCafe </h1>
+          </Link>
+
           <span className="hamburger-icon">
             <GiHamburgerMenu
               onClick={() => showModal("block")}
@@ -29,79 +42,27 @@ const HeaderNav = () => {
 
         <nav className="nav-links">
           <Link to="/likepage" className="links-nav">
-            Like
+            Like <small className="length-value">{likeItem.length}</small>
           </Link>
-          <Link to="/" className="links-nav">
-            History
-          </Link>
-          <Link to="/" className="links-nav">
+
+          <Link to="/playlistpage" className="links-nav">
             Playlist
+            <small className="length-value-playlist">
+              {playlistItem.length}{" "}
+            </small>
           </Link>
-          <Link to="/" className="links-nav">
-            Watch later
+          <Link to="/watchpage" className="links-nav">
+            Watch later{" "}
+            <small className="length-value-watch">{watchItem.length}</small>
+          </Link>
+          <Link to="/historypage" className="links-nav">
+            History
           </Link>
         </nav>
 
         <article style={{ display: modal }}>
           Hy,User <button className="btn-login">Login</button>
         </article>
-      </div>
-      <div className="header-bottom-container">
-        <div>
-          <span
-            className="links-nav"
-            onClick={() => dispatch({ type: "FITER_BY_HOME" })}
-          >
-            Home
-          </span>
-          <span
-            className="links-nav"
-            onClick={() =>
-              dispatch({
-                type: "FITER_BY_CATEGORY",
-                payload: "FILTER_BY_CODING",
-              })
-            }
-          >
-            Coding
-          </span>
-          <span
-            className="links-nav"
-            onClick={() =>
-              dispatch({
-                type: "FITER_BY_CATEGORY",
-                payload: "FILTER_BY_FINANCE",
-              })
-            }
-          >
-            Finance
-          </span>
-          <span
-            className="links-nav"
-            onClick={() =>
-              dispatch({ type: "FITER_BY_CATEGORY", payload: "FILTER_BY_TED" })
-            }
-          >
-            TEDx
-          </span>
-          <span
-            className="links-nav"
-            onClick={() =>
-              dispatch({
-                type: "FITER_BY_CATEGORY",
-                payload: "FILTER_BY_VIDEOGRAPHY",
-              })
-            }
-          >
-            Videography
-          </span>
-        </div>
-        <input
-          placeholder="search your genre and videos "
-          onChange={(e) =>
-            dispatch({ type: "FILTER_BY_SEARCH", payload: e.target.value })
-          }
-        />
       </div>
     </>
   );
