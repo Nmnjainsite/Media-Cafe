@@ -6,9 +6,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useLike } from "../context/like-context";
 import { usePlaylist } from "../context/playlist-context";
 import { useWatch } from "../context/watchLater-context";
-import { AiFillAccountBook } from "react-icons/ai";
+import { useAuth } from "../context/auth-context";
 const HeaderNav = () => {
   const [modal, showModal] = useState(true);
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
   const {
     likeState: { likeItem },
   } = useLike();
@@ -61,7 +62,10 @@ const HeaderNav = () => {
         </nav>
 
         <article style={{ display: modal }}>
-          Hy,User <button className="btn-login">Login</button>
+          Hy,User{" "}
+          <button className="btn-login">
+            {isLoggedIn ? "Logout" : "Login"}
+          </button>
         </article>
       </div>
     </>

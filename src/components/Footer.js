@@ -12,7 +12,7 @@ const Footer = () => {
       <footer>
         <p>
           {" "}
-          © MetaCafe 2022. All rights reserved. Site - Managed by Naman Jain .
+          © MediaCafe 2022. All rights reserved. Site - Managed by Naman Jain .
         </p>
 
         <a href="https://github.com/Nmnjainsite">

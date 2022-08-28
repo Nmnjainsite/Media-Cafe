@@ -15,7 +15,7 @@ body {
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   width: 100%;
   font-family: "Signika Negative", sans-serif;
-  border-bottom: 1px solid #262626;
+  border-bottom: 1px solid turquoise;
 }
 
 .app-title {
@@ -128,15 +128,15 @@ body {
   font-size: 0.8rem;
 }
 .length-value-watch {
-  position: relative;
-  bottom: 1.3rem;
+  position: absolute;
   background-color: turquoise;
   color: #262626;
   padding: 0.3rem 0.4rem;
   padding-left: 0.5rem;
   border-radius: 6rem;
   outline: 0;
-  right: 0.4rem;
+  margin-top: -1.1rem;
+  margin-left: -0.4rem;
   font-size: 0.8rem;
 }
 
@@ -158,18 +158,6 @@ body {
   .header-top-container > article {
     margin-left: auto;
   }
-  /* .length-value-watch {
-    position: relative;
-    bottom: 2.5rem;
-    background-color: turquoise;
-    color: #262626;
-    padding: 0.3rem 0.4rem;
-    padding-left: 0.5rem;
-    border-radius: 6rem;
-    outline: 0;
-    left: 2.5rem;
-    font-size: 0.8rem;
-  } */
 }
 
 @media (max-width: 768px) {

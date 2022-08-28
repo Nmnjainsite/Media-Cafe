@@ -35,6 +35,7 @@ const SingleProductCard = ({ videos }) => {
         <div style={{ fontSize: "1.3rem", cursor: "pointer", color: "white" }}>
           {isLike ? (
             <AiFillHeart
+              style={{ color: "red" }}
               onClick={() =>
                 likeDispatch({ type: "REMOVE_FROM_LIKE", payload: _id })
               }
@@ -72,6 +73,7 @@ const SingleProductCard = ({ videos }) => {
           <span>
             {isWatch ? (
               <BsClockFill
+                style={{ color: "turquoise" }}
                 onClick={() =>
                   watchDispatch({
                     type: "REMOVE_FROM_WATCH",

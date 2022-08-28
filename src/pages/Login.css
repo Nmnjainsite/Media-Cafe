@@ -1,0 +1,137 @@
+login-nav-container {
+  display: grid;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  justify-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: black;
+  width: 100%;
+  font-family: "Macondo", cursive;
+  font-size: 3rem;
+  height: 5rem;
+}
+
+.nav-logo {
+  width: 5rem;
+  position: relative;
+}
+
+.login-box {
+  font-family: "Lato", sans serif;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.login-google {
+  background-color: turquoise;
+  color: #262626;
+
+  border-radius: 0.3rem;
+  border: 1px solid turquoise;
+  padding: 0.5rem 3rem;
+  cursor: pointer;
+  margin-bottom: 1.8rem;
+}
+
+.login-col-1 > h1 {
+  font-size: 2rem;
+}
+
+.login-google:hover {
+  color: var(--primary-color);
+  background-color: var(--background-color);
+}
+
+.email-box {
+  width: 90%;
+  text-align: center;
+}
+
+.forgot-pass {
+  float: right;
+  width: 45%;
+  cursor: default;
+}
+
+.email-box > input {
+  cursor: text;
+  width: 80%;
+  padding: 0.8em;
+  border-radius: 0.3em;
+  margin: 0.5em;
+  margin-left: 3em;
+  text-align: center;
+  padding-bottom: 0.6em;
+  border: 1px solid var(--background-color);
+  cursor: text;
+}
+
+.login-button {
+  color: var(--primary-color);
+  background-color: var(--background-color);
+  margin: 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  padding: 0.6rem 5rem;
+  font-size: 1rem;
+  border: none;
+  border: 1px solid var(--background-color);
+}
+.login-button-2 {
+  color: var(--primary-color);
+  background-color: var(--background-color);
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border: none;
+  border: 1px solid var(--background-color);
+}
+.login-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}
+
+.login-button-2:hover {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}
+
+.login-img {
+  width: 80%;
+  margin-top: 1rem;
+  margin-left: auto;
+}
+
+.login-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 90%;
+}
+
+@media only screen and (max-width: 600px) {
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+  }
+
+  .login-button {
+    padding: 0.5rem 2rem;
+  }
+  .login-button-2 {
+    padding: 0.5rem 0.7rem;
+  }
+
+  .login-img {
+    display: none;
+    position: absolute;
+  }
+}

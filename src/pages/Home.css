@@ -1,22 +1,26 @@
 .video-container {
   color: white;
-  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 80%;
+  width: 100%;
   align-items: center;
 }
 
 .iframe-box {
+  display: flex;
   margin: 1rem;
-  border: 2px solid #262626;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  border: 1px solid #262626;
+  box-shadow: 0 0.1rem 0.3rem #262626, 0 0.5rem 1rem black;
 }
 
 .result {
   font-size: 1.3rem;
   text-align: left;
   margin: 1rem;
+}
+
+.yt-img {
+  width: 100%;
 }
 
 @media (max-width: 768px) {

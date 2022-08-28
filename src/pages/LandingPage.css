@@ -4,16 +4,27 @@
   align-items: center;
   justify-items: center;
   margin: 1rem;
+  color: white;
 }
-.landing-nav > img {
+
+.landing-tagline {
+  font-size: 3.5rem;
+}
+.landing-img {
   width: 100%;
+}
+.description-landing {
+  font-size: 2rem;
+  margin-top: 2rem;
+
+  text-align: center;
 }
 .explore-btn {
   background-color: turquoise;
   color: #262626;
-  padding: 1rem;
+  padding: 1rem 6rem;
   text-decoration: none;
-  width: 40%;
+
   border-radius: 0.3rem;
   font-size: 1.3rem;
   font-family: "Signika Negative", sans-serif;
@@ -35,5 +46,11 @@
   .landing-nav > img {
     width: 100%;
     margin-top: 1em;
+  }
+  .landing-tagline {
+    font-size: 2rem;
+  }
+  .description-landing {
+    font-size: 1.3rem;
   }
 }

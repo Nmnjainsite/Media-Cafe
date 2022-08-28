@@ -9,8 +9,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { usePlaylist } from "../context/playlist-context";
 import { useHistory } from "../context/history-context";
 import { useWatch } from "../context/watchLater-context";
+
 const VideoStore = ({ videos }) => {
-  const { src, title, description, _id, noDetail } = videos;
+  const { src, title, description, _id, noDetail, iframeId } = videos;
   const { likeState, likeDispatch } = useLike();
   const { playlistState, playlistDispatch } = usePlaylist();
   const { historyDispatch } = useHistory();
@@ -24,24 +25,32 @@ const VideoStore = ({ videos }) => {
     <div className="iframe-box">
       <li style={{ listStyle: "none" }}>
         <div className="object" key="object">
-          <img src="" />
-
-          {!noDetail && (
-            <Link
-              key="title"
-              to={`/product/${_id}`}
+          <Link to={`/product/${_id}`}>
+            <img
               onClick={() =>
                 historyDispatch({ type: "ADD_TO_HISTORY", payload: videos })
               }
-            >
-              {title}
-            </Link>
-          )}
+              src={`https://img.youtube.com/vi/${_id}/maxresdefault.jpg`}
+              className="yt-img"
+            />
+          </Link>
 
-          <p key="description">{description}</p>
-          <div style={{ fontSize: "1.3rem", cursor: "pointer" }}>
+          <div key="title" style={{ textAlign: "left", padding: "0.5rem" }}>
+            {title}
+          </div>
+
+          <p key="description" style={{ textAlign: "left" }}>
+            {description}
+          </p>
+          <div
+            style={{
+              fontSize: "1.3rem",
+              cursor: "pointer",
+            }}
+          >
             {isLike ? (
               <AiFillHeart
+                style={{ color: "red" }}
                 onClick={() =>
                   likeDispatch({ type: "REMOVE_FROM_LIKE", payload: _id })
                 }
@@ -79,6 +88,7 @@ const VideoStore = ({ videos }) => {
             <span>
               {isWatch ? (
                 <BsClockFill
+                  style={{ color: "turquoise" }}
                   onClick={() =>
                     watchDispatch({
                       type: "REMOVE_FROM_WATCH",

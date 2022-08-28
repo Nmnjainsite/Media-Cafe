@@ -6,23 +6,25 @@
 export const videos = [
   // ----------------"TEDx"-----------------------
   {
-    _id: "v8cx6v87cx6",
+    _id: "0NV1KdWRHck",
     title: "Shah Rukh Khan",
     src: "https://www.youtube.com/embed/0NV1KdWRHck",
+
     description:
       " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
     category: "TEDx",
   },
   {
-    _id: "IgKWPdJWuBQ",
+    _id: "kcW4ABcY3zI",
     title: "Dr. Shashi Tharoor",
     src: "https://www.youtube.com/embed/kcW4ABcY3zI",
+
     description:
       " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
     category: "TEDx",
   },
   {
-    _id: "_Hk7nl8LbQA",
+    _id: "YRvf00NooN8",
     title: "Elon Musk",
     src: "https://www.youtube.com/embed/YRvf00NooN8",
     description:
@@ -30,7 +32,7 @@ export const videos = [
     category: "TEDx",
   },
   {
-    _id: "F_Riqjdh2oM",
+    _id: "Y7qzo1WMcxs",
     title: "Aman Dhattarwal ",
     src: "https://www.youtube.com/embed/Y7qzo1WMcxs",
     description:
@@ -38,7 +40,7 @@ export const videos = [
     category: "TEDx",
   },
   {
-    _id: "4j2emMn7UaI",
+    _id: "eIho2S0ZahI",
     title: " Julian Treasure ",
     src: "https://www.youtube.com/embed/eIho2S0ZahI",
     description:
@@ -49,7 +51,7 @@ export const videos = [
   // --------------------coding----------------
 
   {
-    _id: "LknADkbbekc",
+    _id: "cCOL7MC4Pl0",
     title: "Jake Archibald",
     src: "https://www.youtube.com/embed/cCOL7MC4Pl0",
     description:
@@ -58,7 +60,7 @@ export const videos = [
   },
 
   {
-    _id: "pWU3DYvnP0s",
+    _id: "dpw9EHDh2bM",
     title: "React Conf",
     src: "https://www.youtube.com/embed/dpw9EHDh2bM",
     description:
@@ -67,7 +69,7 @@ export const videos = [
   },
 
   {
-    _id: "E8xFo5lZGDA",
+    _id: "xu87YWbr4X0",
     title: "Wes Bos",
     src: "https://www.youtube.com/embed/xu87YWbr4X0",
     description:
@@ -76,7 +78,7 @@ export const videos = [
   },
 
   {
-    _id: "quYJtGRCsew",
+    _id: "0if71HOyVjY",
     title: "Russ Olsen",
     src: "https://www.youtube.com/embed/0if71HOyVjY",
     description:
@@ -85,7 +87,7 @@ export const videos = [
   },
 
   {
-    _id: "a5xNyAxwuPQ",
+    _id: "8aGhZQkoFbQ",
     title: "JSConf",
     src: "https://www.youtube.com/embed/8aGhZQkoFbQ",
     description:
@@ -96,7 +98,7 @@ export const videos = [
   //  --------------------Finance-----------------
 
   {
-    _id: "iFAc91miTMY",
+    _id: "PX5-XyBNi00",
     title: "Warren Buffet",
     src: "https://www.youtube.com/embed/PX5-XyBNi00",
     description:
@@ -105,7 +107,7 @@ export const videos = [
   },
 
   {
-    _id: "WwWMJ1pXDZM",
+    _id: "A7r2vCxa3pI",
     title: "CA Rachna",
     src: "https://www.youtube.com/embed/A7r2vCxa3pI",
     description:
@@ -114,7 +116,7 @@ export const videos = [
   },
 
   {
-    _id: "OA2Emtj5Mjw",
+    _id: "QDWv0l7liHc",
     title: "Sandeep Maheshwari x Pranjal Kamra",
     src: "https://www.youtube.com/embed/QDWv0l7liHc",
     description:
@@ -123,16 +125,16 @@ export const videos = [
   },
 
   {
-    _id: "F_Riqjdh2oM",
-    title: "https://www.youtube.com/embed/Robert Kiyosaki",
-    src: "zNTNWQmf1DE",
+    _id: "zNTNWQmf1DE",
+    title: "Robert Kiyosaki",
+    src: "https://www.youtube.com/embed/zNTNWQmf1DE",
     description:
       " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
     category: "Finance",
   },
 
   {
-    _id: "DlA2jMueIyc",
+    _id: "wuyuawr_ITI",
     title: "Nitin Kamath",
     src: "https://www.youtube.com/embed/wuyuawr_ITI",
     description:
@@ -143,7 +145,7 @@ export const videos = [
   // -------------------Videography------------------
 
   {
-    _id: "dbt-RB18az0",
+    _id: "xr9xugPb0Cc",
     title: "Brandon Washington",
     src: "https://www.youtube.com/embed/xr9xugPb0Cc",
     description:
@@ -152,7 +154,7 @@ export const videos = [
   },
 
   {
-    _id: "ZCFkWDdmXG8",
+    _id: "9FiN6sKXbzQ",
     title: "Nick Kelly",
     src: "https://www.youtube.com/embed/9FiN6sKXbzQ",
     description:
@@ -161,7 +163,7 @@ export const videos = [
   },
 
   {
-    _id: "FyB5inp5r6M",
+    _id: "mvNgtFKNDAE",
     title: "Sandeep Maheshwari",
     src: "https://www.youtube.com/embed/mvNgtFKNDAE",
     description:
@@ -170,7 +172,7 @@ export const videos = [
   },
 
   {
-    _id: "8CIwSvPHX7g",
+    _id: "CmVA3cWllB8",
     title: "Josh Winiarski",
     src: "https://www.youtube.com/embed/CmVA3cWllB8",
     description:
