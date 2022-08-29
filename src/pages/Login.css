@@ -1,13 +1,12 @@
-login-nav-container {
+.login-nav-container {
   display: grid;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   justify-items: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
-  background-color: black;
   width: 100%;
-  font-family: "Macondo", cursive;
+  font-family: "Signika Negative", sans-serif !important;
   font-size: 3rem;
   height: 5rem;
 }
@@ -18,7 +17,6 @@ login-nav-container {
 }
 
 .login-box {
-  font-family: "Lato", sans serif;
   text-align: center;
   width: 100%;
   display: flex;
@@ -28,10 +26,16 @@ login-nav-container {
   color: white;
 }
 
+.auth-img {
+  width: 80%;
+  margin-top: 1rem;
+  margin-left: auto;
+}
+
 .login-google {
   background-color: turquoise;
   color: #262626;
-
+  font-family: "Signika Negative", sans-serif;
   border-radius: 0.3rem;
   border: 1px solid turquoise;
   padding: 0.5rem 3rem;
@@ -68,39 +72,42 @@ login-nav-container {
   margin-left: 3em;
   text-align: center;
   padding-bottom: 0.6em;
-  border: 1px solid var(--background-color);
+  border: 1px solid #262626;
   cursor: text;
+  font-family: "Signika Negative", sans-serif;
 }
 
 .login-button {
-  color: var(--primary-color);
-  background-color: var(--background-color);
+  color: #262626;
+  background-color: turquoise;
   margin: 1rem;
   border-radius: 0.3rem;
   cursor: pointer;
   padding: 0.6rem 5rem;
   font-size: 1rem;
   border: none;
-  border: 1px solid var(--background-color);
+  border: 1px solid #262626;
+  font-family: "Signika Negative", sans-serif;
 }
 .login-button-2 {
-  color: var(--primary-color);
-  background-color: var(--background-color);
+  color: #262626;
+  background-color: turquoise;
   font-size: 1rem;
   padding: 0.6rem 1.5rem;
   border-radius: 0.3rem;
   cursor: pointer;
   border: none;
-  border: 1px solid var(--background-color);
+  border: 1px solid #262626;
+  font-family: "Signika Negative", sans-serif;
 }
 .login-button:hover {
-  background-color: var(--secondary-color);
-  color: var(--background-color);
+  background-color: #262626;
+  color: turquoise;
 }
 
 .login-button-2:hover {
-  background-color: var(--secondary-color);
-  color: var(--background-color);
+  background-color: #262626;
+  color: turquoise;
 }
 
 .login-img {
@@ -130,7 +137,7 @@ login-nav-container {
     padding: 0.5rem 0.7rem;
   }
 
-  .login-img {
+  .auth-img {
     display: none;
     position: absolute;
   }

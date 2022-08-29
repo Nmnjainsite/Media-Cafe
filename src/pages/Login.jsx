@@ -2,9 +2,10 @@ import React from "react";
 import "./Login.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
-
+import authImg from "../assets/auth-img.svg";
 import { useState } from "react";
 import HeaderNav from "../components/Header";
+import Footer from "../components/Footer";
 const Login = () => {
   const [userInput, setUserInput] = useState("");
   const [passwordCheck, setSize] = useState("");
@@ -117,7 +118,7 @@ const Login = () => {
                   });
                 }}
               >
-                Login As Guest
+                {isLoggedIn ? "Logout" : "Login As Guest"}
               </button>
             </div>
             {answer && <p>Wrong Attempt!</p>}
@@ -125,13 +126,15 @@ const Login = () => {
               Not a Member?
               <Link
                 to="/SignUp"
-                style={{ color: "green", textDecoration: "none" }}
+                style={{ color: "red", textDecoration: "none" }}
               >
                 SignUp
               </Link>
             </p>
           </div>
+          <img src={authImg} className="auth-img"></img>
         </div>
+        <Footer />
       </section>
     </>
   );

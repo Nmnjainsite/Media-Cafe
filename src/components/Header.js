@@ -63,9 +63,11 @@ const HeaderNav = () => {
 
         <article style={{ display: modal }}>
           Hy,User{" "}
-          <button className="btn-login">
-            {isLoggedIn ? "Logout" : "Login"}
-          </button>
+          <Link to="/login">
+            <button className="btn-login">
+              {isLoggedIn ? "Logout" : "Login"}
+            </button>
+          </Link>
         </article>
       </div>
     </>

@@ -2,6 +2,7 @@ footer {
   color: white;
   border-top: 1px solid #262626;
   font-size: 1.2rem;
+  margin-top: 1em;
 }
 
 footer > a {
