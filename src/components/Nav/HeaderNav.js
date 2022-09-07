@@ -1,12 +1,13 @@
 import React from "react";
 import "./HeaderNav.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useLike } from "../context/like-context";
-import { usePlaylist } from "../context/playlist-context";
-import { useWatch } from "../context/watchLater-context";
-import { useAuth } from "../context/auth-context";
+import { useLike } from "../../context/like-context";
+import { usePlaylist } from "../../context/playlist-context";
+import { useWatch } from "../../context/watchLater-context";
+import { useAuth } from "../../context/auth-context";
+import Login from "../../pages/Auth/Login";
 const HeaderNav = () => {
   const [modal, showModal] = useState(true);
   const { isLoggedIn, setIsLoggedIn } = useAuth();
@@ -20,6 +21,10 @@ const HeaderNav = () => {
     watchState: { watchItem },
   } = useWatch();
   const navigate = useNavigate;
+  const getActiveStyle = ({ isActive }) => ({
+    color: isActive ? "turquoise" : "",
+    borderBottom: isActive ? "2px solid grey" : "",
+  });
   return (
     <>
       <div className="header-top-container">
@@ -42,32 +47,40 @@ const HeaderNav = () => {
         </div>
 
         <nav className="nav-links">
-          <Link to="/likepage" className="links-nav">
+          <NavLink to="/likepage" className="links-nav" style={getActiveStyle}>
             Like <small className="length-value">{likeItem.length}</small>
-          </Link>
+          </NavLink>
 
-          <Link to="/playlistpage" className="links-nav">
+          <NavLink
+            to="/playlistpage"
+            className="links-nav"
+            style={getActiveStyle}
+          >
             Playlist
             <small className="length-value-playlist">
               {playlistItem.length}{" "}
             </small>
-          </Link>
-          <Link to="/watchpage" className="links-nav">
+          </NavLink>
+          <NavLink to="/watchpage" className="links-nav" style={getActiveStyle}>
             Watch later{" "}
             <small className="length-value-watch">{watchItem.length}</small>
-          </Link>
-          <Link to="/historypage" className="links-nav">
+          </NavLink>
+          <NavLink
+            to="/historypage"
+            className="links-nav"
+            style={getActiveStyle}
+          >
             History
-          </Link>
+          </NavLink>
         </nav>
 
         <article style={{ display: modal }}>
           Hy,User{" "}
-          <Link to="/login">
+          <NavLink to="/login">
             <button className="btn-login">
               {isLoggedIn ? "Logout" : "Login"}
             </button>
-          </Link>
+          </NavLink>
         </article>
       </div>
     </>

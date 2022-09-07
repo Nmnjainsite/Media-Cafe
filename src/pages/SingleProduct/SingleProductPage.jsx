@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { videos } from "../backend/db/videos";
+import { videos } from "../../backend/db/videos";
 import React from "react";
 import SingleProductCard from "./SingleProductCard";
 function SingleProductPage() {

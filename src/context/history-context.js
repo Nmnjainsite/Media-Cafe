@@ -1,7 +1,6 @@
 import { useContext, createContext, useReducer, useEffect } from "react";
 import React from "react";
 import historyReducer from "../reducer/historyReducer";
-
 const HistoryContext = createContext(null);
 
 const initialValue = {

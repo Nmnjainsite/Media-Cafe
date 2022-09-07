@@ -2,13 +2,14 @@ import React from "react";
 import { AiFillClockCircle, AiFillHeart } from "react-icons/ai";
 import { BsHeart } from "react-icons/bs";
 import { CgPlayListRemove, CgPlayListCheck } from "react-icons/cg";
-import { useLike } from "../context/like-context";
-import getProductDetails from "../utils/find";
+import { useLike } from "../../context/like-context";
+import getProductDetails from "../../utils/find";
 import { Link, useNavigate } from "react-router-dom";
-import { usePlaylist } from "../context/playlist-context";
-import HeaderNav from "../components/Header";
-import { useWatch } from "../context/watchLater-context";
+import { usePlaylist } from "../../context/playlist-context";
+import HeaderNav from "../../components/Nav/HeaderNav";
+import { useWatch } from "../../context/watchLater-context";
 import { BsClock, BsClockFill } from "react-icons/bs";
+import { toast } from "react-toastify";
 const SingleProductCard = ({ videos }) => {
   const { _id, src } = videos;
   const { likeState, likeDispatch } = useLike();
@@ -36,14 +37,16 @@ const SingleProductCard = ({ videos }) => {
           {isLike ? (
             <AiFillHeart
               style={{ color: "red" }}
-              onClick={() =>
-                likeDispatch({ type: "REMOVE_FROM_LIKE", payload: _id })
-              }
+              onClick={() => {
+                likeDispatch({ type: "REMOVE_FROM_LIKE", payload: _id });
+                toast.success("Removed From Like !");
+              }}
             ></AiFillHeart>
           ) : (
             <BsHeart
               onClick={() => {
                 likeDispatch({ type: "ADD_TO_LIKE", payload: videos });
+                toast.success("Added To Like !");
               }}
             ></BsHeart>
           )}
@@ -51,21 +54,23 @@ const SingleProductCard = ({ videos }) => {
           <span style={{ margin: "0.7rem", fontSize: "1.5rem" }}>
             {isPlaylist ? (
               <CgPlayListCheck
-                onClick={() =>
+                onClick={() => {
                   playlistDispatch({
                     type: "REMOVE_FROM_PLAYLIST",
                     payload: _id,
-                  })
-                }
+                  }),
+                    toast.success("Removed From Like !");
+                }}
               ></CgPlayListCheck>
             ) : (
               <CgPlayListRemove
-                onClick={() =>
+                onClick={() => {
                   playlistDispatch({
                     type: "ADD_TO_PLAYLIST",
                     payload: videos,
-                  })
-                }
+                  });
+                  toast.success("Added To Playlist");
+                }}
               ></CgPlayListRemove>
             )}
           </span>
@@ -74,21 +79,23 @@ const SingleProductCard = ({ videos }) => {
             {isWatch ? (
               <BsClockFill
                 style={{ color: "turquoise" }}
-                onClick={() =>
+                onClick={() => {
                   watchDispatch({
                     type: "REMOVE_FROM_WATCH",
                     payload: _id,
-                  })
-                }
+                  });
+                  toast.success("Removed From Watch !");
+                }}
               ></BsClockFill>
             ) : (
               <BsClock
-                onClick={() =>
+                onClick={() => {
                   watchDispatch({
                     type: "ADD_TO_WATCH",
                     payload: videos,
-                  })
-                }
+                  });
+                  toast.success("Added To Watch");
+                }}
               ></BsClock>
             )}
           </span>

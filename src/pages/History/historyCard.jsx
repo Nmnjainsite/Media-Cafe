@@ -1,8 +1,8 @@
 import React from "react";
-import "./likeCard.css";
 import { AiFillDelete } from "react-icons/ai";
-import { useHistory } from "../context/history-context";
+import { useHistory } from "../../context/history-context";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 const HistoryCard = ({ videos }) => {
   const { _id, title, description } = videos;
   const { historyDispatch } = useHistory();
@@ -15,14 +15,14 @@ const HistoryCard = ({ videos }) => {
             width="360"
             className="img-cls"
           />{" "}
-          <AiFillDelete
-            className="delete-icon"
-            onClick={() =>
-              historyDispatch({ type: "REMOVE_FROM_HISTORY", payload: _id })
-            }
-          ></AiFillDelete>{" "}
         </Link>
-
+        <AiFillDelete
+          className="delete-icon"
+          onClick={() => {
+            historyDispatch({ type: "REMOVE_FROM_HISTORY", payload: _id });
+            toast.success("Removed From History !");
+          }}
+        ></AiFillDelete>{" "}
         <div key={description}>
           <p key={title}>{title}</p>
           {description}

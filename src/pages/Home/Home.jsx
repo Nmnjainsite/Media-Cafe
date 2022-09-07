@@ -1,11 +1,12 @@
 import React from "react";
-import HeaderNav from "../components/Header";
-import { videos } from "../backend/db/videos";
+import HeaderNav from "../../components/Nav/HeaderNav";
+import { videos } from "../../backend/db/videos";
 import "./Home.css";
-import { useFilter } from "../context/filter-context";
-import filterByCategory from "../utils/filterByCategory";
-import filterBySearch from "../utils/filterBySearch";
-import VideoStore from "../components/VideoStore";
+import { useFilter } from "../../context/filter-context";
+import filterByCategory from "../../utils/filterByCategory";
+import filterBySearch from "../../utils/filterBySearch";
+import VideoStore from "../../components/VideoStore";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [{ state, category, searchValue }, dispatch] = useFilter();
@@ -16,6 +17,7 @@ const Home = () => {
   return (
     <>
       <HeaderNav />
+
       <div className="header-bottom-container">
         <div>
           <span
@@ -74,12 +76,20 @@ const Home = () => {
         />
       </div>
       <p className="result"> Showing Results: {getFilterData.length}</p>
+      {/* <Link to="/upload">Upload</Link> */}
       <div className="video-container" key="item_id">
-        {getFilterData.map((videos, itemData) => (
-          <>
-            <VideoStore videos={videos} itemData={itemData} />
-          </>
-        ))}
+        {getFilterData.length > 0 ? (
+          getFilterData.map((videos, itemData) => (
+            <>
+              <VideoStore videos={videos} itemData={itemData} />
+            </>
+          ))
+        ) : (
+          <img
+            src="https://cdni.iconscout.com/illustration/premium/thumb/search-result-not-found-2130355-1800920.png"
+            className="empty-img"
+          ></img>
+        )}
       </div>
     </>
   );

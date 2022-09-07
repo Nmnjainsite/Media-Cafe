@@ -1,0 +1,12 @@
+.title-plain {
+  text-align: center;
+}
+
+.header-top-container-2 {
+  display: block;
+  text-align: center;
+  font-size: 1.3rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  font-family: "Signika Negative", sans-serif;
+  border-bottom: 1px solid turquoise;
+}

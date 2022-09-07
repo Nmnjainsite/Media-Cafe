@@ -1,9 +1,7 @@
 import React from "react";
-import HeaderNav from "../components/Header";
-import landingPageImg from "../assets/landing-page.jpg";
-import img from "../assets/img.jpg";
+import HeaderNav from "../../components/Nav/HeaderNav";
 import "./LandingPage.css";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 function LandingPage() {
   return (

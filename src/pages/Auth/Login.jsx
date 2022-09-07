@@ -1,11 +1,12 @@
 import React from "react";
 import "./Login.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useAuth } from "../context/auth-context";
-import authImg from "../assets/auth-img.svg";
+import { useAuth } from "../../context/auth-context";
+import authImg from "../../assets/auth-img.svg";
 import { useState } from "react";
-import HeaderNav from "../components/Header";
-import Footer from "../components/Footer";
+import PlainNav from "../../components/Nav/PlainNav";
+import Footer from "../../components/Footer/Footer";
+import { toast } from "react-toastify";
 const Login = () => {
   const [userInput, setUserInput] = useState("");
   const [passwordCheck, setSize] = useState("");
@@ -62,7 +63,7 @@ const Login = () => {
   return (
     <>
       <section>
-        <HeaderNav />
+        <PlainNav />
 
         <div className="login-container">
           <div className="login-box">
@@ -116,6 +117,7 @@ const Login = () => {
                   navigate("/home", {
                     replace: true,
                   });
+                  toast.success("Login Successfully");
                 }}
               >
                 {isLoggedIn ? "Logout" : "Login As Guest"}

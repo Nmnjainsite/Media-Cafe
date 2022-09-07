@@ -21,6 +21,10 @@
 .yt-img {
   width: 100%;
 }
+.empty-img {
+  width: 50vw;
+  margin-left: 40%;
+}
 
 @media (max-width: 768px) {
   .video-container {
@@ -31,8 +35,12 @@
     width: 100%;
     align-items: center;
   }
+  .empty-img {
+    width: 80vw;
+    margin-left: 10%;
+  }
 }
-@media (max-width: 855px) {
+/* @media (max-width: 855px) {
   .video-container {
     color: white;
     margin-top: 1rem;
@@ -41,4 +49,4 @@
     width: 100%;
     align-items: center;
   }
-}
+} */

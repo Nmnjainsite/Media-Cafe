@@ -1,8 +1,8 @@
 import React from "react";
-import "./likeCard.css";
 import { AiFillDelete } from "react-icons/ai";
-import { usePlaylist } from "../context/playlist-context";
+import { usePlaylist } from "../../context/playlist-context";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 const PlaylistCard = ({ videos }) => {
   const { _id, src, title, description } = videos;
   const { playlistDispatch } = usePlaylist();
@@ -16,14 +16,14 @@ const PlaylistCard = ({ videos }) => {
             width="360"
             className="img-cls"
           />{" "}
-          <AiFillDelete
-            className="delete-icon"
-            onClick={() =>
-              playlistDispatch({ type: "REMOVE_FROM_PLAYLIST", payload: _id })
-            }
-          ></AiFillDelete>{" "}
         </Link>
-
+        <AiFillDelete
+          className="delete-icon"
+          onClick={() => {
+            playlistDispatch({ type: "REMOVE_FROM_PLAYLIST", payload: _id });
+            toast.success("Removed From Playlist !");
+          }}
+        ></AiFillDelete>{" "}
         <div key={description}>
           {" "}
           <p key={title}>{title}</p>

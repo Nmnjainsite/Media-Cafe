@@ -1,16 +1,20 @@
 import "./App.css";
-import LandingPage from "./pages/LandingPage";
-import LikePage from "./pages/likePage";
-import PlaylistPage from "./pages/playlistPage";
-import SingleProductPage from "./pages/SingleProductPage";
-import HistoryPage from "./pages/historyPage";
-import WatchLaterPage from "./pages/watchLaterPage";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import RequireAuth from "./pages/RequireAuth";
-import { Route, Routes } from "react-router-dom";
 import React from "react";
-
+import LandingPage from "./pages/LandingPage/LandingPage";
+import LikePage from "./pages/Like/likePage";
+import PlaylistPage from "./pages/Playlist/playlistPage";
+import SingleProductPage from "./pages/SingleProduct/SingleProductPage";
+import HistoryPage from "./pages/History/historyPage";
+import WatchLaterPage from "./pages/Watch-Later/watchLaterPage";
+import Login from "./pages/Auth/Login";
+import Signup from "./pages/Auth/signup";
+import Home from "./pages/Home/Home";
+import Upload from "./pages/upload";
+import RequireAuth from "./pages/RequireAuth";
+import PlainNav from "./components/Nav/PlainNav.jsx";
+import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import NotFound from "./pages/Error404/404";
 function App() {
   return (
     <div className="App">
@@ -53,7 +57,22 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/plain" element={<PlainNav />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

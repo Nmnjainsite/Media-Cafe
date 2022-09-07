@@ -1,8 +1,8 @@
 import React from "react";
-import "./likeCard.css";
 import { AiFillDelete } from "react-icons/ai";
-import { useWatch } from "../context/watchLater-context";
+import { useWatch } from "../../context/watchLater-context";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 const WatchCard = ({ videos }) => {
   const { _id, src, title, description } = videos;
   const { watchDispatch } = useWatch();
@@ -16,14 +16,14 @@ const WatchCard = ({ videos }) => {
               width="360"
               className="img-cls"
             />{" "}
-            <AiFillDelete
-              className="delete-icon"
-              onClick={() =>
-                watchDispatch({ type: "REMOVE_FROM_WATCH", payload: _id })
-              }
-            ></AiFillDelete>{" "}
           </Link>
-
+          <AiFillDelete
+            className="delete-icon"
+            onClick={() => {
+              watchDispatch({ type: "REMOVE_FROM_WATCH", payload: _id }),
+                toast.success("Removed Successfully");
+            }}
+          ></AiFillDelete>{" "}
           <div key={description}>
             {" "}
             <p key={title}>{title}</p>
