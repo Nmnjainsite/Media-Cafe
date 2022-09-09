@@ -7,7 +7,7 @@ import { useLike } from "../../context/like-context";
 import { usePlaylist } from "../../context/playlist-context";
 import { useWatch } from "../../context/watchLater-context";
 import { useAuth } from "../../context/auth-context";
-import Login from "../../pages/Auth/Login";
+import { toast } from "react-toastify";
 const HeaderNav = () => {
   const [modal, showModal] = useState(true);
   const { isLoggedIn, setIsLoggedIn } = useAuth();
@@ -20,7 +20,7 @@ const HeaderNav = () => {
   const {
     watchState: { watchItem },
   } = useWatch();
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const getActiveStyle = ({ isActive }) => ({
     color: isActive ? "turquoise" : "",
     borderBottom: isActive ? "2px solid grey" : "",
@@ -35,7 +35,7 @@ const HeaderNav = () => {
               width: "3rem",
             }}
           ></img>
-          <Link to="/" className="title">
+          <Link to="/" className="header-title">
             <h1> MediaCafe </h1>
           </Link>
 
@@ -75,12 +75,22 @@ const HeaderNav = () => {
         </nav>
 
         <article style={{ display: modal }}>
-          Hy,User{" "}
-          <NavLink to="/login">
-            <button className="btn-login">
-              {isLoggedIn ? "Logout" : "Login"}
-            </button>
-          </NavLink>
+          <span>Hy,User</span>
+
+          <button
+            className="btn-login"
+            onClick={() => {
+              if (isLoggedIn) {
+                setIsLoggedIn((login) => !isLoggedIn);
+                navigate("/");
+                toast.success("Logout Successfully");
+              } else {
+                navigate("/login");
+              }
+            }}
+          >
+            {isLoggedIn ? "Logout" : "Login"}
+          </button>
         </article>
       </div>
     </>

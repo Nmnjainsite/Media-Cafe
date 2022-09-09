@@ -2,12 +2,12 @@ import React from "react";
 import "./Login.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
-import authImg from "../../assets/auth-img.svg";
-import { useState } from "react";
-import PlainNav from "../../components/Nav/PlainNav";
 import Footer from "../../components/Footer/Footer";
-import { toast } from "react-toastify";
-const Login = () => {
+import PlainNav from "../../components/Nav/PlainNav";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import authImg from "../../assets/auth-img.svg";
+function Login() {
   const [userInput, setUserInput] = useState("");
   const [passwordCheck, setSize] = useState("");
   const [answer, setAnswer] = useState(false);
@@ -29,23 +29,9 @@ const Login = () => {
     setSize(passwordCheck);
   }
 
-  // function emailHandler(event) {
-  //   const checkEmail = event.target.value;
-  //   setAnswer(false);
-  //   setEmail(checkEmail);
-  // }
-
-  // function changeTo() {
-  //   if (checkEmail === userInput) {
-  //
-  //   } else {
-  //     setAnswer(true);
-  //   }
-  // }
-
   function changeTo() {
     if (userInput === "6546") {
-      navigate("/home");
+      navigate("/Products");
     } else {
       setUserInput("");
       setAnswer(true);
@@ -53,13 +39,12 @@ const Login = () => {
   }
   function changeTo() {
     if (passwordCheck === "4242") {
-      navigate("/home");
+      navigate("/Products");
     } else {
       setSize("");
       setAnswer(true);
     }
   }
-
   return (
     <>
       <section>
@@ -117,10 +102,13 @@ const Login = () => {
                   navigate("/home", {
                     replace: true,
                   });
-                  toast.success("Login Successfully");
+                  toast.success("🦄 Login Successfull !", {
+                    position: "top-center",
+                    autoClose: 1000,
+                  });
                 }}
               >
-                {isLoggedIn ? "Logout" : "Login As Guest"}
+                Login As Guest
               </button>
             </div>
             {answer && <p>Wrong Attempt!</p>}
@@ -128,7 +116,7 @@ const Login = () => {
               Not a Member?
               <Link
                 to="/SignUp"
-                style={{ color: "red", textDecoration: "none" }}
+                style={{ color: "green", textDecoration: "none" }}
               >
                 SignUp
               </Link>
@@ -140,6 +128,6 @@ const Login = () => {
       </section>
     </>
   );
-};
+}
 
 export default Login;

@@ -15,6 +15,7 @@ import PlainNav from "./components/Nav/PlainNav.jsx";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import NotFound from "./pages/Error404/404";
+import MockAPI from "./pages/Mockman/Mockman";
 function App() {
   return (
     <div className="App">
@@ -61,6 +62,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/plain" element={<PlainNav />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="mock" element={<MockAPI />} />
       </Routes>
       <ToastContainer
         position="top-center"

@@ -59,7 +59,7 @@ const SingleProductCard = ({ videos }) => {
                     type: "REMOVE_FROM_PLAYLIST",
                     payload: _id,
                   }),
-                    toast.success("Removed From Like !");
+                    toast.success("Removed From Playlist !");
                 }}
               ></CgPlayListCheck>
             ) : (
@@ -69,7 +69,7 @@ const SingleProductCard = ({ videos }) => {
                     type: "ADD_TO_PLAYLIST",
                     payload: videos,
                   });
-                  toast.success("Added To Playlist");
+                  toast.success("Added To Playlist ! ");
                 }}
               ></CgPlayListRemove>
             )}
@@ -84,7 +84,7 @@ const SingleProductCard = ({ videos }) => {
                     type: "REMOVE_FROM_WATCH",
                     payload: _id,
                   });
-                  toast.success("Removed From Watch !");
+                  toast.success("Removed From Watch Later !");
                 }}
               ></BsClockFill>
             ) : (
@@ -94,7 +94,7 @@ const SingleProductCard = ({ videos }) => {
                     type: "ADD_TO_WATCH",
                     payload: videos,
                   });
-                  toast.success("Added To Watch");
+                  toast.success("Added To Watch Later !");
                 }}
               ></BsClock>
             )}

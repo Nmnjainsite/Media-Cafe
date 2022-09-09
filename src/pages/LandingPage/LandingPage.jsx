@@ -7,11 +7,12 @@ function LandingPage() {
   return (
     <section>
       <HeaderNav />
+
       <div className="landing-nav">
         <div>
           <h1 className="landing-tagline">
-            <span style={{ color: "turquoise" }}>Organize </span>all of your
-            company’s videos.
+            <span>Organize </span>
+            all of your company's videos.
           </h1>
 
           <p className="description-landing">

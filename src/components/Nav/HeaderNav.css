@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 1.3rem;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0, 0, 0, 0.2); */
   width: 100%;
   font-family: "Signika Negative", sans-serif;
   border-bottom: 1px solid turquoise;
@@ -24,7 +24,7 @@ body {
   flex-wrap: wrap;
 }
 
-.title {
+.header-title {
   margin-left: 0.5rem;
   cursor: pointer;
   font-family: "Arvo", sans-serif;
@@ -86,13 +86,15 @@ body {
 }
 
 .btn-login {
+  margin-left: 0.3rem;
   color: black;
   background-color: turquoise;
   padding: 0.4rem 2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   cursor: pointer;
   font-size: 1.3rem;
   font-family: "Signika Negative", sans-serif;
+  border: none;
 }
 
 .btn-login:hover {
@@ -108,7 +110,7 @@ body {
   bottom: 1.2rem;
   background-color: turquoise;
   color: #262626;
-  padding: 0.3rem 0.6rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 6rem;
   outline: 0;
   right: 0.8rem;
@@ -147,6 +149,7 @@ body {
     align-items: center;
     font-size: 1rem;
   }
+
   .nav-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -155,6 +158,7 @@ body {
   .links-nav {
     margin: 0.5rem;
   }
+
   .header-top-container > article {
     margin-left: auto;
   }
@@ -186,7 +190,7 @@ body {
   }
 
   .links-nav {
-    margin: 0.8rem;
+    margin: 0.5rem;
   }
 
   .hamburger-icon {

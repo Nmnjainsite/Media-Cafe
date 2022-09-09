@@ -14,10 +14,7 @@ const PlainNav = () => {
             }}
           ></img>
 
-          <h1 className="title" style={{ textAlign: "center" }}>
-            {" "}
-            MediaCafe{" "}
-          </h1>
+          <h1 className="header-title">MediaCafe</h1>
 
           <span className="hamburger-icon">
             <GiHamburgerMenu

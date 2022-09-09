@@ -1,37 +1,11 @@
-.login-nav-container {
-  display: grid;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  justify-items: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: white;
-  width: 100%;
-  font-family: "Signika Negative", sans-serif !important;
-  font-size: 3rem;
-  height: 5rem;
-}
-
-.nav-logo {
-  width: 5rem;
-  position: relative;
-}
-
-.login-box {
-  text-align: center;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
 .auth-img {
   width: 80%;
   margin-top: 1rem;
   margin-left: auto;
 }
-
+.login-box {
+  width: 100%;
+}
 .login-google {
   background-color: turquoise;
   color: #262626;
@@ -83,7 +57,7 @@
   margin: 1rem;
   border-radius: 0.3rem;
   cursor: pointer;
-  padding: 0.6rem 5rem;
+  padding: 0.6rem 4rem;
   font-size: 1rem;
   border: none;
   border: 1px solid #262626;
@@ -122,7 +96,7 @@
   width: 90%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .login-container {
     display: flex;
     justify-content: center;

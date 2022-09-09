@@ -21,7 +21,7 @@ const WatchCard = ({ videos }) => {
             className="delete-icon"
             onClick={() => {
               watchDispatch({ type: "REMOVE_FROM_WATCH", payload: _id }),
-                toast.success("Removed Successfully");
+                toast.success("Removed From Watch Later !");
             }}
           ></AiFillDelete>{" "}
           <div key={description}>

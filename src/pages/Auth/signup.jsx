@@ -1,73 +1,43 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
-import { toast } from "react-toastify";
+import Footer from "../../components/Footer/Footer";
 import PlainNav from "../../components/Nav/PlainNav";
-const Signup = () => {
-  const [firstName, setFirstName] = useState("shanu");
-  const [lastName, setLastName] = useState("agrawal");
-  const [email, setEmail] = useState("shanu.agrawal@gmail.com");
-  const [password, setPassword] = useState("1234");
-  const navigate = useNavigate();
-  const signupHandler = async () => {
-    const body = {
-      email: email,
-      password: password,
-      firstName: firstName,
-      lastName: lastName,
-    };
-    try {
-      const response = await axios.post("/api/auth/signup", body);
-      localStorage.setItem("token", response.data.encodedToken);
-      setTimeout(() => {
-        navigate("/login");
-      }, 1000);
-      toast.success("Signup Successfully");
-    } catch (error) {
-      toast.error("Signup Failed");
-    }
-  };
-
+import { Link } from "react-router-dom";
+import React from "react";
+const SignUp = () => {
   return (
-    <div className="signup__form">
-      <PlainNav />
-      <div className="signup__form__text">Signup</div>
-      <input
-        type="text"
-        placeholder="First Name"
-        name=""
-        onChange={(e) => setFirstName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Last Name"
-        name=""
-        onChange={(e) => setLastName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Email"
-        name=""
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="password"
-        name=""
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button className="button primary_btn" onClick={() => signupHandler()}>
-        Signup
-      </button>
-      <div className="signup__link">
-        <div className="small_text">Already have a account?</div>
-        <Link to="/login">
-          <span className="signup_text">Login</span>
-        </Link>
-      </div>
-    </div>
+    <>
+      <section>
+        <PlainNav />
+        <div className="sign-box">
+          <div className="sign-container">
+            <h1>Register</h1>
+            <h3>Fill Your Details</h3>
+
+            <legend>First Name</legend>
+            <input></input>
+            <legend>Last Name</legend>
+            <input></input>
+            <legend>E-mail</legend>
+            <input type="email"></input>
+            <legend>Create Password</legend>
+            <input type="password"></input>
+            <div>
+              <input type="checkbox"></input>
+              <p>Yes, I agree to all the Terms, Privacy policy</p>
+            </div>
+            <Link to="/Login" className="register-btn">
+              <button>Register</button>
+            </Link>
+          </div>
+          {/* <img
+            src={signIn}
+            className="signup-img"
+            style={{ width: "50%", margin: "3rem", height: "30rem" }}
+          ></img> */}
+        </div>
+        <Footer />
+      </section>
+    </>
   );
 };
 
-export default Signup;
+export default SignUp;

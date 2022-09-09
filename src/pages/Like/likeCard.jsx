@@ -23,7 +23,7 @@ const LikeCard = ({ videos }) => {
           className="delete-icon"
           onClick={() => {
             likeDispatch({ type: "REMOVE_FROM_LIKE", payload: _id }),
-              toast.success("Remove From Like !");
+              toast.success("Removed From Like !");
           }}
         ></AiFillDelete>{" "}
         <div key={description}>

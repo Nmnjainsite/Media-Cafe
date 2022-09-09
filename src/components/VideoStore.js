@@ -18,7 +18,7 @@ const VideoStore = ({ videos }) => {
   const { historyDispatch } = useHistory();
   const { watchState, watchDispatch } = useWatch();
   const { isLoggedIn } = useAuth();
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const isLike = getProductDetails(likeState.likeItem, _id);
   const isPlaylist = getProductDetails(playlistState.playlistItem, _id);
   const isWatch = getProductDetails(watchState.watchItem, _id);
@@ -36,6 +36,7 @@ const VideoStore = ({ videos }) => {
           toast.success("Added To Like !");
       }
     } else {
+      navigate("/login");
       toast.warn("Please Login First !");
     }
   };
