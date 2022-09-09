@@ -3,7 +3,6 @@
   grid-template-columns: repeat(2, 1fr);
   margin: 1rem;
   color: white;
-  margin-top: 5rem;
 }
 
 .landing-tagline {
@@ -14,6 +13,7 @@
 }
 .description-landing {
   font-size: 2rem;
+  margin-bottom: 2em;
 }
 .explore-btn {
   background-color: turquoise;
@@ -21,6 +21,7 @@
   padding: 1rem 5rem;
   text-decoration: none;
   border-radius: 0.3rem;
+
   font-size: 1.3rem;
   font-family: "Signika Negative", sans-serif;
   cursor: pointer;

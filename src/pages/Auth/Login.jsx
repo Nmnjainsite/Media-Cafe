@@ -73,7 +73,10 @@ function Login() {
             </div>
 
             <div className="email-box">
-              <div style={{ marginTop: "0.8rem" }}>E-mail</div>
+              <div style={{ marginTop: "0.8rem", marginLeft: "2.5rem" }}>
+                {" "}
+                E-mail
+              </div>
               <input
                 placeholder="Enter your email"
                 onChange={checkPassword}

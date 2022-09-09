@@ -10,15 +10,70 @@ import HeaderNav from "../../components/Nav/HeaderNav";
 import { useWatch } from "../../context/watchLater-context";
 import { BsClock, BsClockFill } from "react-icons/bs";
 import { toast } from "react-toastify";
+import { useAuth } from "../../context/auth-context";
 const SingleProductCard = ({ videos }) => {
   const { _id, src } = videos;
   const { likeState, likeDispatch } = useLike();
   const { playlistState, playlistDispatch } = usePlaylist();
   const { watchDispatch, watchState } = useWatch();
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const isLike = getProductDetails(likeState.likeItem, _id);
   const isPlaylist = getProductDetails(playlistState.playlistItem, _id);
   const isWatch = getProductDetails(watchState.watchItem, _id);
+  const { isLoggedIn } = useAuth();
+  const likeHandler = (videos, _id) => {
+    if (isLoggedIn) {
+      if (isLike) {
+        likeDispatch({
+          type: "REMOVE_FROM_LIKE",
+          payload: _id,
+        });
+        toast.success("Removed From Like !");
+      } else {
+        likeDispatch({ type: "ADD_TO_LIKE", payload: videos }),
+          toast.success("Added To Like !");
+      }
+    } else {
+      navigate("/login");
+      toast.warn("Please Login First !");
+    }
+  };
+  const playlistHandler = (videos, _id) => {
+    if (isLoggedIn) {
+      if (isPlaylist) {
+        playlistDispatch({
+          type: "REMOVE_FROM_PLAYLIST",
+          payload: _id,
+        });
+        toast.success("Removed From Playlist !");
+      } else {
+        playlistDispatch({ type: "ADD_TO_PLAYLIST", payload: videos }),
+          toast.success("Added To Playlist !");
+      }
+    } else {
+      navigate("/login");
+      toast.warn("Please Login First !");
+    }
+  };
+
+  const watchHandler = (videos, _id) => {
+    if (isLoggedIn) {
+      if (isWatch) {
+        watchDispatch({
+          type: "REMOVE_FROM_WATCH",
+          payload: _id,
+        });
+        toast.success("Removed From Watch Later !");
+      } else {
+        watchDispatch({ type: "ADD_TO_WATCH", payload: videos }),
+          toast.success("Added To Watch Later !");
+      }
+    } else {
+      navigate("/login");
+      toast.warn("Please Login First !");
+    }
+  };
+
   return (
     <div>
       <HeaderNav />
@@ -37,40 +92,20 @@ const SingleProductCard = ({ videos }) => {
           {isLike ? (
             <AiFillHeart
               style={{ color: "red" }}
-              onClick={() => {
-                likeDispatch({ type: "REMOVE_FROM_LIKE", payload: _id });
-                toast.success("Removed From Like !");
-              }}
+              onClick={() => likeHandler(videos, _id)}
             ></AiFillHeart>
           ) : (
-            <BsHeart
-              onClick={() => {
-                likeDispatch({ type: "ADD_TO_LIKE", payload: videos });
-                toast.success("Added To Like !");
-              }}
-            ></BsHeart>
+            <BsHeart onClick={() => likeHandler(videos, _id)}></BsHeart>
           )}
 
           <span style={{ margin: "0.7rem", fontSize: "1.5rem" }}>
             {isPlaylist ? (
               <CgPlayListCheck
-                onClick={() => {
-                  playlistDispatch({
-                    type: "REMOVE_FROM_PLAYLIST",
-                    payload: _id,
-                  }),
-                    toast.success("Removed From Playlist !");
-                }}
+                onClick={() => playlistHandler(videos, _id)}
               ></CgPlayListCheck>
             ) : (
               <CgPlayListRemove
-                onClick={() => {
-                  playlistDispatch({
-                    type: "ADD_TO_PLAYLIST",
-                    payload: videos,
-                  });
-                  toast.success("Added To Playlist ! ");
-                }}
+                onClick={() => playlistHandler(videos, _id)}
               ></CgPlayListRemove>
             )}
           </span>
@@ -79,24 +114,10 @@ const SingleProductCard = ({ videos }) => {
             {isWatch ? (
               <BsClockFill
                 style={{ color: "turquoise" }}
-                onClick={() => {
-                  watchDispatch({
-                    type: "REMOVE_FROM_WATCH",
-                    payload: _id,
-                  });
-                  toast.success("Removed From Watch Later !");
-                }}
+                onClick={() => watchHandler(videos, _id)}
               ></BsClockFill>
             ) : (
-              <BsClock
-                onClick={() => {
-                  watchDispatch({
-                    type: "ADD_TO_WATCH",
-                    payload: videos,
-                  });
-                  toast.success("Added To Watch Later !");
-                }}
-              ></BsClock>
+              <BsClock onClick={() => watchHandler(videos, _id)}></BsClock>
             )}
           </span>
         </div>
