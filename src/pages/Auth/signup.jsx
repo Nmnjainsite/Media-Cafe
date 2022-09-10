@@ -25,7 +25,7 @@ const SignUp = () => {
               <p>Yes, I agree to all the Terms, Privacy policy</p>
             </div>
             <Link to="/Login" className="register-btn">
-              <button>Register</button>
+              <button className="explore-btn">Register</button>
             </Link>
           </div>
           {/* <img

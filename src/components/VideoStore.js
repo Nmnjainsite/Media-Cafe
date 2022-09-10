@@ -53,6 +53,7 @@ const VideoStore = ({ videos }) => {
           toast.success("Added To Playlist !");
       }
     } else {
+      navigate("/login");
       toast.warn("Please Login First !");
     }
   };
@@ -70,6 +71,7 @@ const VideoStore = ({ videos }) => {
           toast.success("Added To Watch Later !");
       }
     } else {
+      navigate("/login");
       toast.warn("Please Login First !");
     }
   };
