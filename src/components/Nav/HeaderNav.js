@@ -1,6 +1,8 @@
 import React from "react";
 import "./HeaderNav.css";
 import { Link, useNavigate, NavLink } from "react-router-dom";
+import { BsFillSunFill } from "react-icons/bs";
+import { MdDarkMode } from "react-icons/md";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useLike } from "../../context/like-context";
@@ -50,7 +52,7 @@ const HeaderNav = () => {
           <NavLink to="/likepage" className="links-nav" style={getActiveStyle}>
             Like <small className="length-value">{likeItem.length}</small>
           </NavLink>
-
+          {/* <Link to="/uploadcard">Upload</Link> */}
           <NavLink
             to="/playlistpage"
             className="links-nav"

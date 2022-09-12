@@ -9,13 +9,14 @@ import WatchLaterPage from "./pages/Watch-Later/watchLaterPage";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/signup";
 import Home from "./pages/Home/Home";
-import Upload from "./pages/upload";
 import RequireAuth from "./pages/RequireAuth";
 import PlainNav from "./components/Nav/PlainNav.jsx";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import NotFound from "./pages/Error404/404";
 import MockAPI from "./pages/Mockman/Mockman";
+import UploadCard from "./pages/Upload/UploadCard";
+import Upload from "./pages/Upload/Upload";
 function App() {
   return (
     <div className="App">
@@ -58,11 +59,13 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/upload" element={<Upload />} />
+
         <Route path="/signup" element={<Signup />} />
         <Route path="/plain" element={<PlainNav />} />
         <Route path="*" element={<NotFound />} />
         <Route path="mock" element={<MockAPI />} />
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/uploadcard" element={<UploadCard />} />
       </Routes>
       <ToastContainer
         position="top-center"

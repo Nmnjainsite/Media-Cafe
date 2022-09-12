@@ -23,9 +23,8 @@ const PlaylistCard = ({ videos }) => {
             playlistDispatch({ type: "REMOVE_FROM_PLAYLIST", payload: _id });
             toast.success("Removed From Playlist !");
           }}
-        ></AiFillDelete>{" "}
+        ></AiFillDelete>
         <div key={description}>
-          {" "}
           <p key={title}>{title}</p>
           {description}
         </div>

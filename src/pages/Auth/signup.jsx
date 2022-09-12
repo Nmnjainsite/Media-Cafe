@@ -28,11 +28,6 @@ const SignUp = () => {
               <button className="explore-btn">Register</button>
             </Link>
           </div>
-          {/* <img
-            src={signIn}
-            className="signup-img"
-            style={{ width: "50%", margin: "3rem", height: "30rem" }}
-          ></img> */}
         </div>
         <Footer />
       </section>

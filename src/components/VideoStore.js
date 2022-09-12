@@ -1,18 +1,22 @@
 import React from "react";
-import { AiFillClockCircle, AiFillHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
 import { BsHeart } from "react-icons/bs";
 import { CgPlayListRemove, CgPlayListCheck } from "react-icons/cg";
+import { MdOutlinePlaylistPlay } from "react-icons/md";
 import { BsClock, BsClockFill } from "react-icons/bs";
 import { useLike } from "../context/like-context";
 import getProductDetails from "../utils/find";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { usePlaylist } from "../context/playlist-context";
 import { useHistory } from "../context/history-context";
 import { useWatch } from "../context/watchLater-context";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { useAuth } from "../context/auth-context";
+import Upload from "../../src/pages/Upload/Upload";
+import { useState } from "react";
 const VideoStore = ({ videos }) => {
-  const { src, title, description, _id, noDetail, iframeId } = videos;
+  const { title, description, _id } = videos;
+  const [showModal, setShowModal] = useState(false);
   const { likeState, likeDispatch } = useLike();
   const { playlistState, playlistDispatch } = usePlaylist();
   const { historyDispatch } = useHistory();
@@ -22,7 +26,6 @@ const VideoStore = ({ videos }) => {
   const isLike = getProductDetails(likeState.likeItem, _id);
   const isPlaylist = getProductDetails(playlistState.playlistItem, _id);
   const isWatch = getProductDetails(watchState.watchItem, _id);
-
   const likeHandler = (videos, _id) => {
     if (isLoggedIn) {
       if (isLike) {
@@ -76,67 +79,82 @@ const VideoStore = ({ videos }) => {
     }
   };
   return (
-    <div className="iframe-box">
-      <li style={{ listStyle: "none" }}>
-        <div className="object" key="object">
-          <Link to={`/product/${_id}`}>
-            <img
-              onClick={() =>
-                historyDispatch({ type: "ADD_TO_HISTORY", payload: videos })
-              }
-              src={`https://img.youtube.com/vi/${_id}/maxresdefault.jpg`}
-              className="yt-img"
-            />
-          </Link>
+    <>
+      {showModal && <Upload setShowModal={setShowModal} video={videos} />}
 
-          <div key="title" style={{ textAlign: "left", padding: "0.5rem" }}>
-            {title}
-          </div>
+      <div className="iframe-box">
+        <li style={{ listStyle: "none" }}>
+          <div className="object" key="object">
+            <Link to={`/product/${_id}`}>
+              <img
+                onClick={() =>
+                  historyDispatch({ type: "ADD_TO_HISTORY", payload: videos })
+                }
+                src={`https://img.youtube.com/vi/${_id}/maxresdefault.jpg`}
+                className="yt-img"
+              />
+            </Link>
 
-          <p key="description" style={{ textAlign: "left" }}>
-            {description}
-          </p>
-          <div
-            style={{
-              fontSize: "1.3rem",
-              cursor: "pointer",
-            }}
-          >
-            {isLike ? (
-              <AiFillHeart
-                style={{ color: "red" }}
-                onClick={() => likeHandler(videos, _id)}
-              ></AiFillHeart>
-            ) : (
-              <BsHeart onClick={() => likeHandler(videos, _id)}></BsHeart>
-            )}
+            <div key="title" style={{ textAlign: "left", padding: "0.5rem" }}>
+              {title}
+            </div>
 
-            <span style={{ margin: "0.7rem", fontSize: "1.5rem" }}>
-              {isPlaylist ? (
-                <CgPlayListCheck
-                  onClick={() => playlistHandler(videos, _id)}
-                ></CgPlayListCheck>
+            <p key="description" style={{ textAlign: "left" }}>
+              {description}
+            </p>
+            <div
+              style={{
+                fontSize: "1.3rem",
+                cursor: "pointer",
+              }}
+            >
+              {isLike ? (
+                <AiFillHeart
+                  style={{ color: "red" }}
+                  onClick={() => likeHandler(videos, _id)}
+                ></AiFillHeart>
               ) : (
-                <CgPlayListRemove
-                  onClick={() => playlistHandler(videos, _id)}
-                ></CgPlayListRemove>
+                <BsHeart onClick={() => likeHandler(videos, _id)}></BsHeart>
               )}
-            </span>
 
-            <span>
-              {isWatch ? (
-                <BsClockFill
-                  style={{ color: "turquoise" }}
-                  onClick={() => watchHandler(videos, _id)}
-                ></BsClockFill>
-              ) : (
-                <BsClock onClick={() => watchHandler(videos, _id)}></BsClock>
-              )}
-            </span>
+              <span style={{ margin: "0.7rem", fontSize: "1.5rem" }}>
+                {isPlaylist ? (
+                  <CgPlayListCheck
+                    onClick={() => playlistHandler(videos, _id)}
+                  ></CgPlayListCheck>
+                ) : (
+                  <CgPlayListRemove
+                    onClick={() => playlistHandler(videos, _id)}
+                  ></CgPlayListRemove>
+                )}
+              </span>
+
+              {/* <MdOutlinePlaylistPlay
+                onClick={() => {
+                  if (isLoggedIn) {
+                    setShowModal(true);
+                  } else {
+                    navigate("/login");
+                    toast.error("Please Login First");
+                  }
+                }}
+              /> */}
+
+              <span>
+                {isWatch ? (
+                  <BsClockFill
+                    style={{ color: "turquoise" }}
+                    onClick={() => watchHandler(videos, _id)}
+                  ></BsClockFill>
+                ) : (
+                  <BsClock onClick={() => watchHandler(videos, _id)}></BsClock>
+                )}
+              </span>
+            </div>
           </div>
-        </div>
-      </li>
-    </div>
+        </li>
+      </div>
+    </>
   );
 };
 
