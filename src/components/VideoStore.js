@@ -95,17 +95,30 @@ const VideoStore = ({ videos }) => {
               />
             </Link>
 
-            <div key="title" style={{ textAlign: "left", padding: "0.5rem" }}>
+            <div
+              key="title"
+              style={{
+                textAlign: "left",
+                padding: "0.5rem",
+                fontSize: "1.2rem",
+              }}
+            >
               {title}
             </div>
 
-            <p key="description" style={{ textAlign: "left" }}>
+            <p
+              key="description"
+              className="description"
+              style={{ textAlign: "left" }}
+            >
               {description}
             </p>
             <div
               style={{
                 fontSize: "1.3rem",
                 cursor: "pointer",
+                color: "turquoise",
+                marginBottom: "0rem",
               }}
             >
               {isLike ? (
@@ -120,6 +133,7 @@ const VideoStore = ({ videos }) => {
               <span style={{ margin: "0.7rem", fontSize: "1.5rem" }}>
                 {isPlaylist ? (
                   <CgPlayListCheck
+                    style={{ color: "blue" }}
                     onClick={() => playlistHandler(videos, _id)}
                   ></CgPlayListCheck>
                 ) : (
@@ -143,7 +157,7 @@ const VideoStore = ({ videos }) => {
               <span>
                 {isWatch ? (
                   <BsClockFill
-                    style={{ color: "turquoise" }}
+                    style={{ color: "blueviolet" }}
                     onClick={() => watchHandler(videos, _id)}
                   ></BsClockFill>
                 ) : (

@@ -7,7 +7,7 @@ import filterByCategory from "../../utils/filterByCategory";
 import filterBySearch from "../../utils/filterBySearch";
 import VideoStore from "../../components/VideoStore";
 import { Link } from "react-router-dom";
-
+import Footer from "../../components/Footer/Footer";
 const Home = () => {
   const [{ state, category, searchValue }, dispatch] = useFilter();
 
@@ -91,6 +91,7 @@ const Home = () => {
           ></img>
         )}
       </div>
+      <Footer />
     </>
   );
 };

@@ -24,7 +24,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
         <Route
-          path="/likepage"
+          path="/like"
           element={
             <RequireAuth>
               {" "}
@@ -33,7 +33,7 @@ function App() {
           }
         />
         <Route
-          path="/playlistpage"
+          path="/playlist"
           element={
             <RequireAuth>
               <PlaylistPage />
@@ -42,7 +42,7 @@ function App() {
         />
         <Route path="/product/:productId" element={<SingleProductPage />} />
         <Route
-          path="/historyPage"
+          path="/history"
           element={
             <RequireAuth>
               <HistoryPage />
@@ -50,7 +50,7 @@ function App() {
           }
         />
         <Route
-          path="/watchpage"
+          path="/watch"
           element={
             <RequireAuth>
               {" "}

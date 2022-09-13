@@ -20,12 +20,12 @@ const Upload = ({ setShowModal, video }) => {
       name: name,
       description: "hello video",
     };
-
+    console.log(name);
     try {
       const response = await axios.post(
         "/api/user/playlists",
-        { playlist: data },
-        { headers: header }
+        { playlist: data }
+        // { headers: header }
       );
       console.log(response);
       playlistDispatch(response.data.playlistItem);
@@ -36,18 +36,22 @@ const Upload = ({ setShowModal, video }) => {
 
   const addVideoToPlaylist = async (video, id) => {
     const postLink = "/api/user/playlists/" + id;
+    console.log(postLink);
     const sendVideo = { video: video };
-
     try {
       const response = await axios.post(postLink, sendVideo, {
         headers: header,
       });
       console.log(response);
-      playlistDispatch(response.data.playlistItem);
+      // playlistDispatch(response.data.playlistItem);
     } catch (error) {
       console.log(error);
     }
   };
+
+  console.log(createPlaylistHandler());
+  console.log(addVideoToPlaylist());
+  console.log(playlistItem);
   return (
     <div>
       <div>

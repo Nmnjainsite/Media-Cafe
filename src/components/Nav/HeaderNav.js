@@ -49,29 +49,21 @@ const HeaderNav = () => {
         </div>
 
         <nav className="nav-links">
-          <NavLink to="/likepage" className="links-nav" style={getActiveStyle}>
+          <NavLink to="/like" className="links-nav" style={getActiveStyle}>
             Like <small className="length-value">{likeItem.length}</small>
           </NavLink>
           {/* <Link to="/uploadcard">Upload</Link> */}
-          <NavLink
-            to="/playlistpage"
-            className="links-nav"
-            style={getActiveStyle}
-          >
+          <NavLink to="/playlist" className="links-nav" style={getActiveStyle}>
             Playlist
             <small className="length-value-playlist">
               {playlistItem.length}{" "}
             </small>
           </NavLink>
-          <NavLink to="/watchpage" className="links-nav" style={getActiveStyle}>
+          <NavLink to="/watch" className="links-nav" style={getActiveStyle}>
             Watch later{" "}
             <small className="length-value-watch">{watchItem.length}</small>
           </NavLink>
-          <NavLink
-            to="/historypage"
-            className="links-nav"
-            style={getActiveStyle}
-          >
+          <NavLink to="/history" className="links-nav" style={getActiveStyle}>
             History
           </NavLink>
         </nav>

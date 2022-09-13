@@ -11,7 +11,7 @@ export const videos = [
     src: "https://www.youtube.com/embed/0NV1KdWRHck",
 
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      " Look for talks on Technology, business, Entertainment and Design plus science, global issues. ",
     category: "TEDx",
   },
   {
@@ -20,7 +20,7 @@ export const videos = [
     src: "https://www.youtube.com/embed/kcW4ABcY3zI",
 
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      " A well educated mind vs a well formed mind: Dr. Shashi Tharoor at TEDxGateway 2013 ",
     category: "TEDx",
   },
   {
@@ -28,7 +28,7 @@ export const videos = [
     title: "Elon Musk",
     src: "https://www.youtube.com/embed/YRvf00NooN8",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "Elon Musk talks Twitter, Tesla and how his brain works , future plans for Tesla & Twitter",
     category: "TEDx",
   },
   {
@@ -36,7 +36,7 @@ export const videos = [
     title: "Aman Dhattarwal ",
     src: "https://www.youtube.com/embed/Y7qzo1WMcxs",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "How To Earn in your Early 20s? By Doing Consistent Work| Aman Dhattarwal | TEDx VIPS ",
     category: "TEDx",
   },
   {
@@ -44,7 +44,7 @@ export const videos = [
     title: " Julian Treasure ",
     src: "https://www.youtube.com/embed/eIho2S0ZahI",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "How to speak so that people want to listen  &  create an impact || Julian Treasure ",
     category: "TEDx",
   },
 
@@ -55,7 +55,7 @@ export const videos = [
     title: "Jake Archibald",
     src: "https://www.youtube.com/embed/cCOL7MC4Pl0",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "Jake Archibald: In The Loop setTimeout, micro tasks, requestAnimationFrame, requestIdleCallback",
     category: "coding",
   },
 
@@ -64,7 +64,7 @@ export const videos = [
     title: "React Conf",
     src: "https://www.youtube.com/embed/dpw9EHDh2bM",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "React Today and Tomorrow and 90% Cleaner React With Hooks || React Conf 2018",
     category: "coding",
   },
 
@@ -73,7 +73,7 @@ export const videos = [
     title: "Wes Bos",
     src: "https://www.youtube.com/embed/xu87YWbr4X0",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "Make a JavaScript Drum Kit in Vanilla JS To Learn JavaScript In Deep|| In 2022 By Wes Bos",
     category: "coding",
   },
 
@@ -82,7 +82,7 @@ export const videos = [
     title: "Russ Olsen",
     src: "https://www.youtube.com/embed/0if71HOyVjY",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "Functional Programming in 40 Minutes By Russ Olsen || GOTO 2018",
     category: "coding",
   },
 
@@ -91,7 +91,7 @@ export const videos = [
     title: "JSConf",
     src: "https://www.youtube.com/embed/8aGhZQkoFbQ",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "What the heck is the event loop anyway? | Philip Roberts | JSConf EU",
     category: "coding",
   },
 
@@ -102,16 +102,16 @@ export const videos = [
     title: "Warren Buffet",
     src: "https://www.youtube.com/embed/PX5-XyBNi00",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "Warren Buffett reveals his investment strategy and mastering the market",
     category: "Finance",
   },
 
   {
     _id: "A7r2vCxa3pI",
     title: "CA Rachna",
-    src: "https://www.youtube.com/embed/A7r2vCxa3pI",
+    src: "https://www.youtube.com/embed/Xn7KWR9EOGQ",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "Basics of Stock Market For Beginners Lecture 1 By CA Rachana Phadke Ranade",
     category: "Finance",
   },
 
@@ -119,8 +119,7 @@ export const videos = [
     _id: "QDWv0l7liHc",
     title: "Sandeep Maheshwari x Pranjal Kamra",
     src: "https://www.youtube.com/embed/QDWv0l7liHc",
-    description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+    description: "Meet Pranjal Kamra | Make Money From Money |",
     category: "Finance",
   },
 
@@ -129,7 +128,7 @@ export const videos = [
     title: "Robert Kiyosaki",
     src: "https://www.youtube.com/embed/zNTNWQmf1DE",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "The SEVEN Things You NEED To Learn for Your Financial FREEDOM - Robert Kiyosaki",
     category: "Finance",
   },
 
@@ -138,7 +137,7 @@ export const videos = [
     title: "Nitin Kamath",
     src: "https://www.youtube.com/embed/wuyuawr_ITI",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "Nithin Kamath Of Zerodha Speaks On The Big Rise In Millennial Traders | Bazaar Corporate Radar",
     category: "Finance",
   },
 
@@ -149,7 +148,7 @@ export const videos = [
     title: "Brandon Washington",
     src: "https://www.youtube.com/embed/xr9xugPb0Cc",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "5 Videography and Editing Tips for  Beginners In 2022 By Brandon Washington",
     category: "videography",
   },
 
@@ -158,7 +157,7 @@ export const videos = [
     title: "Nick Kelly",
     src: "https://www.youtube.com/embed/9FiN6sKXbzQ",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "A Major Difference Between,Videography & Cinematography By Nick Kelly",
     category: "videography",
   },
 
@@ -167,7 +166,7 @@ export const videos = [
     title: "Sandeep Maheshwari",
     src: "https://www.youtube.com/embed/mvNgtFKNDAE",
     description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+      "Photography Startup Business Plan | High Profit Business ideas in India",
     category: "videography",
   },
 
@@ -175,8 +174,7 @@ export const videos = [
     _id: "CmVA3cWllB8",
     title: "Josh Winiarski",
     src: "https://www.youtube.com/embed/CmVA3cWllB8",
-    description:
-      " Look for talks on Technology, Entertainment and Design -- plus science, business, global issues. ",
+    description: "How To Shoot An Event Video: Shooting + Editing Tips!",
     category: "videography",
   },
 ];
