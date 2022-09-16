@@ -76,7 +76,7 @@ const Home = () => {
         />
       </div>
       <p className="result"> Showing Results: {getFilterData.length}</p>
-      {/* <Link to="/upload">Upload</Link> */}
+      <Link to="/uploaditem">Upload</Link>
       <div className="video-container" key="item_id">
         {getFilterData.length > 0 ? (
           getFilterData.map((videos, itemData) => (
