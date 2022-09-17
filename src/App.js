@@ -17,7 +17,7 @@ import NotFound from "./pages/Error404/404";
 import MockAPI from "./pages/Mockman/Mockman";
 import UploadCard from "./pages/Upload/UploadCard";
 import Upload from "./pages/Upload/Upload";
-import UploadData from "./pages/UploadData";
+
 function App() {
   return (
     <div className="App">
@@ -67,7 +67,6 @@ function App() {
         <Route path="mock" element={<MockAPI />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/uploadcard" element={<UploadCard />} />
-        <Route path="uploaditem" element={<UploadData />} />
       </Routes>
       <ToastContainer
         position="top-center"
