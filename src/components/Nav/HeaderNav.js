@@ -28,7 +28,6 @@ const HeaderNav = () => {
     borderBottom: isActive ? "2px solid grey" : "",
   });
 
-  console.log("werlcome" + "naman");
   return (
     <>
       <div className="header-top-container">
