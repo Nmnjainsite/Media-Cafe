@@ -24,12 +24,6 @@
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
-  "resolution": {
-    "@babel/plugin-transform-react-jsx": "^7.14.9",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "postcss": "^8.3.3"
-  },
   "scripts": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
