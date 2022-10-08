@@ -1,0 +1,53 @@
+.playlist-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: white;
+  max-width: 90%;
+  inset: 0;
+  margin: 4%;
+}
+.playlistpage-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  max-width: 100%;
+  inset: 0;
+  margin: 2%;
+}
+.playlist-card {
+  width: 100%;
+}
+
+.playlistcard-typo {
+  /* border: 1px solid turquoise; */
+  width: 70%;
+  text-align: left;
+  object-fit: contain;
+  margin-left: 15%;
+  overflow: hidden;
+}
+
+.playlistcard-img {
+  object-fit: contain;
+  width: 70%;
+}
+
+.playlistcard-skin {
+  width: 100%;
+}
+
+@media (max-width: 850px) {
+  .playlist-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    color: white;
+    max-width: 90%;
+    inset: 0;
+    margin: 4%;
+  }
+
+  .playlistpage-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

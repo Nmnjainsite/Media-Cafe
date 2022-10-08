@@ -4,7 +4,7 @@ import React from "react";
 export default function RequireAuth({ children }) {
   const { isLoggedIn } = useAuth();
   const location = useLocation();
-  return isLoggedIn ? (
+  return isLoggedIn.isAuth ? (
     children
   ) : (
     <Navigate to="/login" state={{ from: location }} replace />

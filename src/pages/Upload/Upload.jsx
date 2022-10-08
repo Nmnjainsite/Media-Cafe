@@ -1,96 +1,129 @@
-import React from "react";
-
-import { useState } from "react";
+import React, { useState } from "react";
 import { useAuth } from "../../context/auth-context";
 import { usePlaylist } from "../../context/playlist-context";
 import axios from "axios";
-const Upload = ({ setShowModal, video }) => {
-  const [name, setName] = useState("");
-  const { isLoggedIn } = useAuth();
-
+import { toast } from "react-toastify";
+import "./Upload.css";
+export function Upload({ setShowModal, video }) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const {
-    playlistState: { playlistItem },
-    playlistDispatch,
-  } = usePlaylist();
+    isLoggedIn: { token },
+  } = useAuth();
 
-  const header = { authorization: isLoggedIn };
+  const { playlists, setPlaylists } = usePlaylist();
+
+  const header = { authorization: token };
 
   const createPlaylistHandler = async () => {
     const data = {
-      name: name,
-      description: "hello video",
+      title: title,
+      description: description,
     };
-    console.log(name);
+    try {
+      console.log(data);
+      const response = await axios.post(
+        `/api/user/playlists`,
+        { playlist: data },
+        {
+          headers: header,
+        }
+      );
+
+      console.log(response);
+      toast.success(`Created a new playlist ${title}`);
+      setPlaylists(response.data.playlists);
+    } catch (error) {
+      toast.error("Playlist Not Created");
+    }
+  };
+
+  const addVideoToPlaylist = async (video, _id) => {
     try {
       const response = await axios.post(
-        "/api/user/playlists",
-        { playlist: data }
-        // { headers: header }
+        `/api/user/playlists/${_id}`,
+        { video: video },
+        {
+          headers: header,
+        }
       );
-      console.log(response);
-      playlistDispatch(response.data.playlistItem);
+      if (response.data.playlists) {
+        console.log(response);
+
+        setPlaylists(response.data.playlists);
+        toast.success(`Added The Image In ${title}`);
+      } else {
+        toast.warn("This video is already exists.");
+      }
     } catch (error) {
       console.log(error);
     }
   };
-
-  const addVideoToPlaylist = async (video, id) => {
-    const postLink = "/api/user/playlists/" + id;
-    console.log(postLink);
-    const sendVideo = { video: video };
-    try {
-      const response = await axios.post(postLink, sendVideo, {
-        headers: header,
-      });
-      console.log(response);
-      // playlistDispatch(response.data.playlistItem);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  console.log(createPlaylistHandler());
-  console.log(addVideoToPlaylist());
-  console.log(playlistItem);
   return (
-    <div>
+    <div className="upload-container" key={video._id}>
       <div>
-        <p>Add this Video to a collection</p>
-        <div></div>
-
-        <div>
-          <div>
+        <img
+          className="upload-img"
+          alt={video.title}
+          src={`https://img.youtube.com/vi/${video._id}/maxresdefault.jpg`}
+        ></img>
+      </div>
+      <div className="align__horizontal">
+        <div className="label-box">
+          <span>
             <input
+              maxLength={30}
               type="text"
+              placeholder="Add Title To Your Playlist"
               id="playlist_name"
-              onChange={(e) => setName(e.target.value)}
+              className="create__playlist__input"
+              onChange={(e) => setTitle(e.target.value)}
             />
-            <button onClick={() => createPlaylistHandler()}>+</button>
-          </div>
-
-          <div>
-            {playlistItem.length >= 0 &&
-              playlistItem.map((playlistItem) => (
-                <div>
-                  <input
-                    type="checkbox"
-                    onChange={() => addVideoToPlaylist(video, playlistItem._id)}
-                  ></input>
-                  <label key={playlistItem._id}>{playlistItem.title}</label>
-                </div>
-              ))}
-          </div>
-
-          <div>
-            <button type="submit" onClick={() => setShowModal(false)}>
-              Create Collection
-            </button>
-            {/* <button className="button secondary_btn">Cancel</button> */}
-          </div>
+          </span>
+          <span>
+            <input
+              maxLength={50}
+              className="create__playlist__input"
+              type="text"
+              id="playlist_description"
+              placeholder="Describe Your Playlist"
+              onChange={(e) => setDescription(e.target.value)}
+            ></input>
+          </span>
+          <button
+            className="create_btn"
+            onClick={() => createPlaylistHandler()}
+          >
+            Create
+          </button>
+          <p className="playlist-info">Available Playlist</p>
         </div>
       </div>
+
+      <div className="playlist__name__outer">
+        {video &&
+          playlists &&
+          playlists.map((playlist) => (
+            <div className="playlist__name__box">
+              <label key={playlist._id} className="playlist_name">
+                {playlist.title}
+              </label>
+              <button
+                className="btn-add-to-playlist"
+                onClick={() => addVideoToPlaylist(video, playlist._id)}
+              >
+                Add
+              </button>
+            </div>
+          ))}
+      </div>
+      <button
+        className="close_btn"
+        type="submit"
+        onClick={() => setShowModal(false)}
+      >
+        Close
+      </button>
     </div>
   );
-};
-
-export default Upload;
+}

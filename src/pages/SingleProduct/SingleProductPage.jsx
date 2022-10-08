@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { videos } from "../../backend/db/videos";
 import React from "react";
 import SingleProductCard from "./SingleProductCard";
+import Footer from "../../components/Footer/Footer";
 function SingleProductPage() {
   const { productId } = useParams();
 
@@ -12,9 +13,10 @@ function SingleProductPage() {
   const itemData = getData(videos, productId);
 
   return (
-    <>
+    <div>
       <SingleProductCard videos={itemData} />
-    </>
+      <Footer />
+    </div>
   );
 }
 

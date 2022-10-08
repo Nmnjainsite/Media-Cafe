@@ -1,0 +1,69 @@
+.signup-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-btn {
+  margin-left: 1rem;
+  padding: 0.5rem 2rem;
+  color: #262626;
+  background-color: turquoise;
+  border: 1px solid turquoise;
+  cursor: pointer;
+  font-family: "Signika Negative", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 0.2rem;
+}
+
+.signup-btn:hover {
+  color: turquoise;
+  background-color: #262626;
+  transform: scale(1.08);
+  position: relative;
+  transition: transform 0.2s;
+  z-index: 2;
+}
+
+.input-signup {
+  display: flex;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  width: 30%;
+  font-size: 1.3rem;
+  border: 1.5px solid turquoise;
+  outline: 0;
+  border-radius: 0.2rem;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  font-family: "Signika Negative", sans-serif;
+}
+
+.input-signup:focus {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+.signup-h1 {
+  font-size: 1.5rem;
+}
+
+.login-link-button {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: turquoise;
+}
+
+@media (max-width: 855px) {
+  .input-signup {
+    width: 70%;
+  }
+  .signup-btn {
+    padding: 0.4rem 0.5rem;
+  }
+}

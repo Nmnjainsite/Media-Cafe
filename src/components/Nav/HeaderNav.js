@@ -16,9 +16,7 @@ const HeaderNav = () => {
   const {
     likeState: { likeItem },
   } = useLike();
-  const {
-    playlistState: { playlistItem },
-  } = usePlaylist();
+  const { playlists } = usePlaylist();
   const {
     watchState: { watchItem },
   } = useWatch();
@@ -53,11 +51,10 @@ const HeaderNav = () => {
           <NavLink to="/like" className="links-nav" style={getActiveStyle}>
             Like <small className="length-value">{likeItem.length}</small>
           </NavLink>
-          {/* <Link to="/uploadcard">Upload</Link> */}
           <NavLink to="/playlist" className="links-nav" style={getActiveStyle}>
             Playlist
             <small className="length-value-playlist">
-              {playlistItem.length}{" "}
+              {playlists && playlists.length}{" "}
             </small>
           </NavLink>
           <NavLink to="/watch" className="links-nav" style={getActiveStyle}>
@@ -70,21 +67,22 @@ const HeaderNav = () => {
         </nav>
 
         <article style={{ display: modal }}>
-          <span>Hy,User</span>
+          <span>Hy,{isLoggedIn.isAuth ? isLoggedIn.username : "User"}</span>
 
           <button
             className="btn-login"
             onClick={() => {
-              if (isLoggedIn) {
-                setIsLoggedIn((login) => !isLoggedIn);
+              if (isLoggedIn.token) {
+                setIsLoggedIn((login) => !isLoggedIn.isAuth);
                 navigate("/");
+                localStorage.removeItem("token");
                 toast.success("Logout Successfully");
               } else {
                 navigate("/login");
               }
             }}
           >
-            {isLoggedIn ? "Logout" : "Login"}
+            {isLoggedIn.isAuth ? "Logout" : "Login"}
           </button>
         </article>
       </div>

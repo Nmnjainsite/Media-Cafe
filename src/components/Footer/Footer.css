@@ -1,8 +1,9 @@
 footer {
   color: white;
-  border-top: 1px solid #262626;
+  border-top: 1px solid turquoise;
   font-size: 1.2rem;
   margin-top: 1em;
+  margin-bottom: 0.5rem;
 }
 
 footer > a {

@@ -1,0 +1,198 @@
+.round-image {
+  padding: 15px;
+  width: 60px;
+  border-radius: 50%;
+  text-align: left;
+  height: 9vh;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+.channel-name {
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 1.2rem;
+}
+
+.subs-section {
+  display: flex;
+  border-top: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+  width: 100%;
+}
+
+.description-box {
+  color: white;
+  font-size: 1.5rem;
+  width: 90%;
+  text-align: left;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+.views {
+  font-size: 1.2rem;
+  margin-top: 2.5%;
+}
+
+.icons-box {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 0.3rem;
+  float: right;
+  margin-right: 3%;
+}
+
+.playlist-icon {
+  font-size: 2rem;
+  margin-bottom: -0.2rem;
+}
+
+.bars {
+  font-size: 1.3rem;
+  margin-right: 0.7rem;
+  margin-left: 0.7rem;
+  position: relative;
+  top: -0.4rem;
+}
+
+.comments-box {
+  width: 60%;
+  color: white;
+}
+
+.comment-text {
+  color: turquoise;
+  border-left: 4px solid turquoise;
+  font-size: 2rem;
+  width: 27%;
+  margin-left: 8.5%;
+}
+
+.comment-input {
+  width: 90%;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  border-bottom: 3px solid #262626;
+  margin-bottom: 1rem;
+  margin-left: 5%;
+}
+.comment-input:hover,
+.comment-input:focus {
+  border-bottom: 3px solid turquoise;
+}
+.comment-btn {
+  float: right;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  background-color: turquoise;
+  color: #262626;
+  font-size: 1.1rem;
+  border: 1px solid #262626;
+  border-radius: 0.2rem;
+}
+
+.comment-btn:hover {
+  background-color: #262626;
+  color: turquoise;
+}
+.comments {
+  display: flex;
+  margin-top: 5%;
+}
+.person-img {
+  padding: 15px;
+  width: 60px;
+  border-radius: 50%;
+  text-align: left;
+  height: 9vh;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+.comment-username {
+  font-size: 1.7rem;
+  margin-top: 2.5%;
+  text-align: left;
+}
+
+.comment-comment {
+  font-size: 1.3rem;
+  margin-top: 1%;
+}
+
+.must-watch {
+  width: 35%;
+  color: red;
+}
+
+@media (max-width: 855px) {
+  .description-box {
+    font-size: 1rem;
+    width: 90%;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: "5%";
+  }
+  .views {
+    font-size: 1rem;
+    margin-top: 4%;
+  }
+  .round-image {
+    height: 7vh;
+  }
+
+  .icons-box {
+    font-size: 1rem;
+    /* margin-bottom: 0.8rem; */
+    float: right;
+    margin-right: 3%;
+  }
+
+  .playlist-icon {
+    font-size: 1.2rem;
+    margin-bottom: -0.1rem;
+  }
+  .bars {
+    font-size: 1rem;
+    margin-right: 0.7rem;
+    margin-left: 0.7rem;
+    position: relative;
+    top: -0.1rem;
+  }
+  .channel-name {
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+  }
+  .comments-box {
+    width: 100%;
+  }
+  .comment-text {
+    width: 45%;
+    margin-left: 10%;
+  }
+
+  .comment-input {
+    width: 90%;
+    margin-left: 0%;
+  }
+
+  .comment-btn {
+    margin-right: 5%;
+  }
+
+  .person-img {
+    width: 70px;
+    height: 8vh;
+    margin-top: 12%;
+  }
+
+  .comment-username {
+    margin-top: 20%;
+  }
+}

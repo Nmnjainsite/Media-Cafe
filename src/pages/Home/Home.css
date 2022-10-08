@@ -1,19 +1,26 @@
 .video-container {
-  color: white;
+  /* color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 95%;
-  margin-left: 2%;
+  margin-left: 2%; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: white;
+  max-width: 90%;
+  inset: 0;
+  margin: 4%;
 }
 
 .iframe-box {
   display: flex;
   margin: 1rem;
-  border: 1px solid #262626;
-  box-shadow: 0 0.1rem 0.3rem #262626, 0 0.5rem 1rem black;
+  margin-bottom: 3rem;
+  /* border: 1px solid #262626; */
+  /* box-shadow: 0 0.1rem 0.3rem #262626, 0 0.5rem 1rem black; */
 }
 .iframe-box:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   position: relative;
   transition: transform 0.2s;
   z-index: 2;

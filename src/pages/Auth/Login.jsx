@@ -7,44 +7,61 @@ import PlainNav from "../../components/Nav/PlainNav";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import authImg from "../../assets/auth-img.svg";
+import axios from "axios";
 function Login() {
-  const [userInput, setUserInput] = useState("");
-  const [passwordCheck, setSize] = useState("");
-  const [answer, setAnswer] = useState(false);
-  // const [checkEmail, setEmail] = useState("");
-
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
-  function changeText(event) {
-    const userInput = event.target.value;
-    setUserInput(userInput);
-    setAnswer(false);
-  }
-
-  function checkPassword(event) {
-    const passwordCheck = event.target.value;
-    setAnswer(false);
-    setSize(passwordCheck);
-  }
-
-  function changeTo() {
-    if (userInput === "6546") {
-      navigate("/Products");
-    } else {
-      setUserInput("");
-      setAnswer(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`/api/auth/login`, {
+        email: email,
+        password: password,
+      });
+      if (response.data.encodedToken) {
+        localStorage.setItem("token", response.data.encodedToken);
+        navigate("/");
+        console.log(response.data.foundUser.firstName);
+        setIsLoggedIn(() => ({
+          token: response.data.encodedToken,
+          username: response.data.foundUser.firstName,
+          isAuth: true,
+        }));
+        toast.success("Login Successfully");
+      } else {
+        toast.error("Please Fill The Details");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Login Failed");
     }
-  }
-  function changeTo() {
-    if (passwordCheck === "4242") {
-      navigate("/Products");
-    } else {
-      setSize("");
-      setAnswer(true);
+  };
+  const guestLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`/api/auth/login`, {
+        email: "guest123@gmail.com",
+        password: "guest@!2",
+      });
+      localStorage.setItem("token", response.data.encodedToken);
+      navigate("/");
+      console.log(response.data.foundUser.firstName);
+      setIsLoggedIn(() => ({
+        token: response.data.encodedToken,
+        username: response.data.foundUser.firstName,
+        isAuth: true,
+      }));
+      toast.success("Login Successfully");
+    } catch (error) {
+      console.log(error);
+      toast.error("Login Failed");
     }
-  }
+  };
+
   return (
     <>
       <section>
@@ -67,54 +84,47 @@ function Login() {
                   }}
                 >
                   G+
-                </span>{" "}
+                </span>
                 Login With Google
               </button>
             </div>
 
             <div className="email-box">
-              <div style={{ marginTop: "0.8rem", marginLeft: "2.5rem" }}>
-                {" "}
+              <div
+                style={{
+                  marginTop: "0.8rem",
+                  marginLeft: "2.5rem",
+                  fontSize: "1.5rem",
+                }}
+              >
                 E-mail
               </div>
               <input
-                placeholder="Enter your email"
-                onChange={checkPassword}
+                className="input-login"
+                placeholder="abc@gmail.com"
+                onChange={(e) => setEmail(e.target.value)}
               ></input>
 
-              <div>
+              <div className="password">
                 <span>Password </span>
-                <small className="forgot-pass"> Forgot Password?</small>
               </div>
               <input
-                placeholder="Enter your password"
-                type="password"
-                onChange={changeText}
+                className="input-login"
+                placeholder=" user password"
+                type="Password"
+                onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
 
             <div>
-              <button className="login-button" onClick={changeTo}>
+              <button className="login-button" onClick={(e) => onSubmit(e)}>
                 Login
               </button>
 
-              <button
-                className="login-button-2"
-                onClick={() => {
-                  setIsLoggedIn((login) => !isLoggedIn);
-                  navigate("/home", {
-                    replace: true,
-                  });
-                  toast.success("🦄 Login Successfull !", {
-                    position: "top-center",
-                    autoClose: 1000,
-                  });
-                }}
-              >
+              <button className="login-button-2" onClick={(e) => guestLogin(e)}>
                 Login As Guest
               </button>
             </div>
-            {answer && <p>Wrong Attempt!</p>}
             <p>
               Not a Member?
               <Link

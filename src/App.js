@@ -14,10 +14,7 @@ import PlainNav from "./components/Nav/PlainNav.jsx";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import NotFound from "./pages/Error404/404";
-import MockAPI from "./pages/Mockman/Mockman";
-import UploadCard from "./pages/Upload/UploadCard";
-import Upload from "./pages/Upload/Upload";
-
+import Playlist from "./pages/Playlist/Playlist";
 function App() {
   return (
     <div className="App">
@@ -42,6 +39,7 @@ function App() {
           }
         />
         <Route path="/product/:productId" element={<SingleProductPage />} />
+        <Route path="/playlist/:playlistId" element={<Playlist />} />
         <Route
           path="/history"
           element={
@@ -60,13 +58,9 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-
         <Route path="/signup" element={<Signup />} />
         <Route path="/plain" element={<PlainNav />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="mock" element={<MockAPI />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/uploadcard" element={<UploadCard />} />
       </Routes>
       <ToastContainer
         position="top-center"

@@ -19,7 +19,7 @@ const Home = () => {
       <HeaderNav />
 
       <div className="header-bottom-container">
-        <div>
+        <div className="links-nav-bottom-container">
           <span
             className="links-nav"
             onClick={() => dispatch({ type: "FITER_BY_HOME" })}
@@ -77,7 +77,7 @@ const Home = () => {
       </div>
       <p className="result"> Showing Results: {getFilterData.length}</p>
 
-      <div className="video-container" key="item_id">
+      <div className="video-container">
         {getFilterData.length > 0 ? (
           getFilterData.map((videos, itemData) => (
             <>

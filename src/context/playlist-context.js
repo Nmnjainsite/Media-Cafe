@@ -1,19 +1,11 @@
-import { useContext, createContext, useReducer } from "react";
-import React from "react";
-import playlistReducer from "../reducer/playlistReducer";
+import React, { useContext, createContext, useState } from "react";
+
 const PlaylistContext = createContext(null);
 
-const initialValue = {
-  playlistItem: [],
-};
-
 const PlaylistProvider = ({ children }) => {
-  const [playlistState, playlistDispatch] = useReducer(
-    playlistReducer,
-    initialValue
-  );
+  const [playlists, setPlaylists] = useState([]);
   return (
-    <PlaylistContext.Provider value={{ playlistState, playlistDispatch }}>
+    <PlaylistContext.Provider value={{ playlists, setPlaylists }}>
       {children}
     </PlaylistContext.Provider>
   );

@@ -15,6 +15,7 @@
   padding: 0.5rem 3rem;
   cursor: pointer;
   margin-bottom: 1.8rem;
+  font-size: 1rem;
 }
 
 .login-col-1 > h1 {
@@ -31,57 +32,67 @@
   text-align: center;
 }
 
-.forgot-pass {
-  float: right;
-  width: 45%;
-  cursor: default;
+.password {
+  margin-left: 10%;
+  font-size: 1.2rem;
 }
-
-.email-box > input {
-  cursor: text;
+.input-login {
+  background-color: transparent;
+  color: white;
   width: 80%;
   padding: 0.8em;
-  border-radius: 0.3em;
   margin: 0.5em;
   margin-left: 3em;
   text-align: center;
   padding-bottom: 0.6em;
-  border: 1px solid #262626;
+  font-size: 1rem;
+  border: 1.5px solid turquoise;
+  outline: 0;
+  border-radius: 0.3rem;
   cursor: text;
   font-family: "Signika Negative", sans-serif;
+}
+
+.input-login:focus {
+  transform: scale(1.05);
+  position: relative;
+  transition: transform 0.2s;
+  z-index: 2;
 }
 
 .login-button {
   color: #262626;
   background-color: turquoise;
   margin: 1rem;
-  border-radius: 0.3rem;
+  border-radius: 0.2rem;
   cursor: pointer;
-  padding: 0.6rem 4rem;
-  font-size: 1rem;
-  border: none;
-  border: 1px solid #262626;
+  padding: 0.4rem 3rem;
+  font-size: 1.3rem;
+  border: 1px solid turquoise;
   font-family: "Signika Negative", sans-serif;
 }
 .login-button-2 {
   color: #262626;
   background-color: turquoise;
-  font-size: 1rem;
-  padding: 0.6rem 1.5rem;
-  border-radius: 0.3rem;
+  font-size: 1.3rem;
+  padding: 0.4rem 1.5rem;
+  border-radius: 0.2rem;
   cursor: pointer;
-  border: none;
-  border: 1px solid #262626;
+  border: 1px solid turquoise;
   font-family: "Signika Negative", sans-serif;
 }
 .login-button:hover {
-  background-color: #262626;
   color: turquoise;
+  background-color: #262626;
+  transform: scale(1.08);
+  transition: transform 0.2s;
 }
 
 .login-button-2:hover {
-  background-color: #262626;
   color: turquoise;
+  background-color: #262626;
+  transform: scale(1.08);
+  transition: transform 0.2s;
 }
 
 .login-img {
@@ -101,18 +112,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 1rem;
+    margin-left: 5%;
   }
 
   .login-button {
-    padding: 0.5rem 2rem;
+    padding: 0.3rem 1rem;
   }
   .login-button-2 {
-    padding: 0.5rem 0.7rem;
+    padding: 0.3rem 0.4rem;
   }
 
   .auth-img {
     display: none;
     position: absolute;
+  }
+  .input-login {
+    width: 100%;
+    margin-left: 2%;
   }
 }
