@@ -21,25 +21,7 @@ const VideoStore = ({ videos }) => {
   const { watchState, watchDispatch } = useWatch();
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
-  const isLike = getProductDetails(likeState.likeItem, _id);
   const isWatch = getProductDetails(watchState.watchItem, _id);
-  const likeHandler = (videos, _id) => {
-    if (isLoggedIn.token) {
-      if (isLike) {
-        likeDispatch({
-          type: "REMOVE_FROM_LIKE",
-          payload: _id,
-        });
-        toast.success("Removed From Like !");
-      } else {
-        likeDispatch({ type: "ADD_TO_LIKE", payload: videos }),
-          toast.success("Added To Like !");
-      }
-    } else {
-      navigate("/login");
-      toast.warn("Please Login First !");
-    }
-  };
 
   const watchHandler = (videos, _id) => {
     if (isLoggedIn.token) {

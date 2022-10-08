@@ -19,7 +19,6 @@
 }
 
 .playlistcard-typo {
-  /* border: 1px solid turquoise; */
   width: 70%;
   text-align: left;
   object-fit: contain;
@@ -34,6 +33,14 @@
 
 .playlistcard-skin {
   width: 100%;
+}
+
+#delete-icon {
+  z-index: 2;
+  position: absolute;
+  cursor: pointer;
+  margin-left: -1rem;
+  color: white;
 }
 
 @media (max-width: 850px) {

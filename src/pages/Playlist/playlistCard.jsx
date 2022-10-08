@@ -32,7 +32,7 @@ const PlaylistCard = ({ playlist }) => {
           src="https://i.ytimg.com/vi/yY-ND9eXPG0/maxresdefault.jpg"
         ></img>
         <AiFillDelete
-          className="delete-icon"
+          id="delete-icon"
           onClick={() => deletePlaylist(playlist._id)}
         ></AiFillDelete>
         <div className="playlistcard-typo">
