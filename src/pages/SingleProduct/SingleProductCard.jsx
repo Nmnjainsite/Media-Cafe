@@ -47,7 +47,7 @@ const SingleProductCard = ({ videos }) => {
   const isWatch = getProductDetails(watchState.watchItem, _id);
   const { isLoggedIn } = useAuth();
   const likeHandler = (videos, _id) => {
-    if (isLoggedIn) {
+    if (isLoggedIn.token) {
       if (isLike) {
         likeDispatch({
           type: "REMOVE_FROM_LIKE",
@@ -65,7 +65,7 @@ const SingleProductCard = ({ videos }) => {
   };
 
   const watchHandler = (videos, _id) => {
-    if (isLoggedIn) {
+    if (isLoggedIn.token) {
       if (isWatch) {
         watchDispatch({
           type: "REMOVE_FROM_WATCH",

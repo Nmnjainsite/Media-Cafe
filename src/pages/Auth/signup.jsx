@@ -29,6 +29,8 @@ const SignUp = () => {
         toast.error("Please Fill The Details");
       } else {
         localStorage.setItem("token", response.data.encodedToken);
+        localStorage.setItem("firstName", firstName);
+        localStorage.setItem("firstName", lastName);
         navigate("/login");
         console.log(response);
         toast.success("Sign Up Successfully");
