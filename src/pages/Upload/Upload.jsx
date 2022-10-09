@@ -49,9 +49,8 @@ export function Upload({ setShowModal, video }) {
       );
       if (response.data.playlists) {
         console.log(response);
-
         setPlaylists(response.data.playlists);
-        toast.success(`Added The Image In ${title}`);
+        toast.success(`Added The Video In ${title}`);
       } else {
         toast.warn("This video is already exists.");
       }
