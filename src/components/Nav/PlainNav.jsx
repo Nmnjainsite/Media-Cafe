@@ -2,7 +2,9 @@ import React from "react";
 import "./PlainNav.css";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 const PlainNav = () => {
+  const [modal, showModal] = useState(true);
   return (
     <>
       <div className="header-top-container-2">

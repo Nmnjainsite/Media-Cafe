@@ -59,7 +59,7 @@ export function Upload({ setShowModal, video }) {
     }
   };
   return (
-    <div className="upload-container" key={video._id}>
+    <div className="upload-container">
       <div>
         <img
           className="upload-img"

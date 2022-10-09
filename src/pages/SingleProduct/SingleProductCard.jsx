@@ -16,16 +16,15 @@ import "./SingleProduct.css";
 const SingleProductCard = ({ videos }) => {
   const [comment, setComment] = useState("");
   const [update, setUpdate] = useState({
-    comment: [],
-    username: [],
+    comment: "No Comment Yet",
+    username: "User",
     img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
   });
   const changeInput = () => {
     const update = {
       comment: comment,
       username: isLoggedIn.username,
-      // img: "https://www.cheatsheet.com/wp-content/uploads/2021/12/Levi-Ackerman-Attack-on-Titan.jpeg",
-      img: img,
+      img: "https://www.cheatsheet.com/wp-content/uploads/2021/12/Levi-Ackerman-Attack-on-Titan.jpeg",
     };
     if (isLoggedIn.token) {
       if (comment === "") {
