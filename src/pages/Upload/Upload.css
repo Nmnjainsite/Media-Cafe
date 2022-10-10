@@ -9,6 +9,7 @@
   position: fixed;
   inset: 0;
   z-index: 20;
+  transition: all 0.3s ease-out;
 }
 .upload-img {
   width: 50%;
@@ -63,7 +64,6 @@
   border: 1px solid #262626;
   border-radius: 0.2rem;
   margin-top: 2%;
-  /* width: 25%; */
 }
 
 .playlist-info {
@@ -161,26 +161,4 @@
     height: 65vw;
     width: 100%;
   }
-
-  /* .align__horizontal {
-    margin: 1rem;
-  }
-
- 
-
-  .create_btn {
-    width: 50%;
-  }
-
-  .playlist__name__outer {
-    height: 12vw;
-  }
-
-  .playlist-info {
-    width: 70%;
-  }
-
-  .close_btn {
-    margin-left: auto;
-  } */
 }

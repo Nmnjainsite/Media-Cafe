@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Error404 from "../../assets/error404.svg";
+import Footer from "../../components/Footer/Footer";
 import HeaderNav from "../../components/Nav/HeaderNav";
 const NotFound = () => {
   return (
@@ -19,6 +20,7 @@ const NotFound = () => {
         </div>
 
         <img src={Error404} style={{ width: "50%", marginTop: "2rem" }}></img>
+        <Footer />
       </div>
     </>
   );

@@ -82,7 +82,7 @@ const VideoStore = ({ videos }) => {
                     setShowModal(true);
                   } else {
                     navigate("/login");
-                    toast.error("Let's Login First & Crate The Playlist");
+                    toast.error("Let's login first");
                   }
                 }}
               />

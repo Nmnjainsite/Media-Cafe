@@ -157,7 +157,7 @@ const SingleProductCard = ({ videos }) => {
             <div>
               {" "}
               <input
-                placeholder="Add a comment..."
+                placeholder="Add a comment"
                 className="comment-input"
                 onChange={(e) => setComment(e.target.value)}
               ></input>
