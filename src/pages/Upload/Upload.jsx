@@ -50,7 +50,7 @@ export function Upload({ setShowModal, video }) {
       if (response.data.playlists) {
         console.log(response);
         setPlaylists(response.data.playlists);
-        toast.success(`Added The Video In ${title}`);
+        toast.success(`Added The Video In Your Playlist`);
       } else {
         toast.warn("This video is already exists.");
       }

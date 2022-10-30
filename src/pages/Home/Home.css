@@ -1,9 +1,4 @@
 .video-container {
-  /* color: white;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 95%;
-  margin-left: 2%; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   color: white;

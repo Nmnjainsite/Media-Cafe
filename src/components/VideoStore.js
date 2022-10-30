@@ -36,8 +36,8 @@ const VideoStore = ({ videos }) => {
           toast.success("Added To Watch Later !");
       }
     } else {
-      navigate("/login");
-      toast.warn("Please Login First !");
+      navigate("/signup");
+      toast.warn("Let's Signup First !");
     }
   };
   return (
@@ -81,8 +81,8 @@ const VideoStore = ({ videos }) => {
                   if (isLoggedIn.token) {
                     setShowModal(true);
                   } else {
-                    navigate("/login");
-                    toast.error("Let's login first");
+                    navigate("/signup");
+                    toast.warn("Let's Signup first");
                   }
                 }}
               />

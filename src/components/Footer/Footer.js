@@ -11,7 +11,7 @@ const Footer = () => {
     <>
       <footer>
         <p>
-          {" "}
+      
           © MediaCafe 2022. All rights reserved. Site - Managed by Naman Jain .
         </p>
 

@@ -7,6 +7,6 @@ export default function RequireAuth({ children }) {
   return isLoggedIn.isAuth ? (
     children
   ) : (
-    <Navigate to="/login" state={{ from: location }} replace />
+    <Navigate to="/signup" state={{ from: location }} replace />
   );
 }

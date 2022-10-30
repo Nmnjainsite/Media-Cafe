@@ -63,8 +63,6 @@ const LikeCard = ({ videos }) => {
             }}
           ></AiFillDelete>{" "}
           <p key={description}>
-            {" "}
-            {/* <p key={title}>{title}</p> */}
             {description}
           </p>
           <div

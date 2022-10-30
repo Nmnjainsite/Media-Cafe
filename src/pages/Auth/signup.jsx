@@ -36,7 +36,7 @@ const SignUp = () => {
         toast.success("Sign Up Successfully");
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
       toast.error("Sign Up Failed");
     }
   };

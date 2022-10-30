@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FiThumbsUp } from "react-icons/fi";
 import { FaThumbsUp } from "react-icons/fa";
 import { MdOutlinePlaylistAdd } from "react-icons/md";
@@ -20,6 +20,7 @@ const SingleProductCard = ({ videos }) => {
     username: "User",
     img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
   });
+
   const changeInput = () => {
     const update = {
       comment: comment,
@@ -34,10 +35,11 @@ const SingleProductCard = ({ videos }) => {
         toast.success("Commented");
       }
     } else {
-      navigate("/login");
-      toast.warn("Let's Login First");
+      navigate("/signup");
+      toast.warn("Let's Signup First");
     }
   };
+
   const { _id, src, title, description } = videos;
   const { likeState, likeDispatch } = useLike();
   const [showModal, setShowModal] = useState(false);
@@ -59,8 +61,8 @@ const SingleProductCard = ({ videos }) => {
           toast.success("Added To Like !");
       }
     } else {
-      navigate("/login");
-      toast.warn("Please Login First !");
+      navigate("/signup");
+      toast.warn("Please Signup First !");
     }
   };
 
@@ -77,8 +79,8 @@ const SingleProductCard = ({ videos }) => {
           toast.success("Added To Watch Later !");
       }
     } else {
-      navigate("/login");
-      toast.warn("Please Login First !");
+      navigate("/signup");
+      toast.warn("Please Signup First !");
     }
   };
 
@@ -119,8 +121,8 @@ const SingleProductCard = ({ videos }) => {
                     if (isLoggedIn.token) {
                       setShowModal(true);
                     } else {
-                      navigate("/login");
-                      toast.error("Let's Login First & Crate The Playlist");
+                      navigate("/signup");
+                      toast.warn("Let's Signup First & Crate The Playlist");
                     }
                   }}
                 />
@@ -169,7 +171,7 @@ const SingleProductCard = ({ videos }) => {
               <img src={update.img} className="person-img"></img>
 
               <div className="comment-username">
-                {update.username}{" "}
+                {update.username}
                 <p className="comment-comment">{update.comment}</p>
               </div>
             </div>
