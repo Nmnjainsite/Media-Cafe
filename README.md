@@ -8,12 +8,20 @@
 
 # Pages Till Now
 
-* Landing Page
-* Video Player Page
-* Videos Page 
-* Liked Page
-* Playlist Page
-* Watch Later Page
-* History Page 
-* Login & Signup Page
-* Error 404 Page
+** Landing Page
+** Video Player Page
+** Videos Page 
+** Liked Page
+** Playlist Page
+** Watch Later Page
+** History Page 
+** Login & Signup Page
+** Error 404 Page
+
+# Features 
+
+Home Page
+
+* Navbar, from where you can navigate to liked, history, watchlater and playlist page.
+* Videos grid, displaying videos categories in grid.
+* Footer, footer features and footer main.
