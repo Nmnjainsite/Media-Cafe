@@ -34,3 +34,13 @@ Video Player Page
 * Watch later video.
 
  ![home page](https://user-images.githubusercontent.com/101793920/198874103-35599c08-ab2f-43e2-be2a-e998f613ed0b.png)
+ 
+Like Page 
+* Remove from liked.
+* Create playlist & add to playlist.
+* Watch later video.
+
+![like page](https://user-images.githubusercontent.com/101793920/198874342-5f4981b2-48f3-4bb6-92d3-addb92ebe5d2.png)
+
+
+
