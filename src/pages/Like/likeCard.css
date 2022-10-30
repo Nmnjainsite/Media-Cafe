@@ -14,15 +14,6 @@
   margin: 1rem;
 }
 
-/* .likepage-container:hover {
-  transform: scale(1.1);
-  transition: 0.2s ease-in-out;
-} */
-
-/* #likepage-container-skin {
-  margin: 1.5rem;
-} */
-
 .empty-img-col-2 {
   display: grid;
   grid-column-start: 1;
