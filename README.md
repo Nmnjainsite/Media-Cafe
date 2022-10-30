@@ -25,3 +25,6 @@ Home Page
 * Navbar, from where you can navigate to liked, history, watchlater and playlist page.
 * Videos grid, displaying videos categories in grid.
 * Footer, footer features and footer main.
+
+ ![home page](https://user-images.githubusercontent.com/101793920/198874103-35599c08-ab2f-43e2-be2a-e998f613ed0b.png)
+
