@@ -75,8 +75,8 @@ Login Page
 ![404page](https://user-images.githubusercontent.com/101793920/198874995-3675e690-8747-4855-be3e-59792f42d102.png)
 
 # Technology
-React.
-CSS.
-javaScript.
+* React.
+* CSS.
+* javaScript.
 
 
