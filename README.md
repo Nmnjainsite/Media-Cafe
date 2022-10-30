@@ -1,3 +1,3 @@
-# Media-Cafe
+# Media-Cafe - A video library where you you can like,dislike,create playlist, and add to videos to watch later.
 
-A video library where you you can like,dislike,create playlist,add to watch later the video.
+
