@@ -62,6 +62,8 @@ Signup Page
 * Signin User.
 * Personal details fields.
 
+![signuppage](https://user-images.githubusercontent.com/101793920/198875049-05eb6010-7d9c-4bb8-87c7-732d4de870e5.png)
+
 Login Page
 * Add details feilds.
 * Login user.
@@ -70,6 +72,11 @@ Login Page
 404 page
 * 404 page for unknown route
 
+![404page](https://user-images.githubusercontent.com/101793920/198874995-3675e690-8747-4855-be3e-59792f42d102.png)
 
+# Technology
+React.
+CSS.
+javaScript.
 
 
