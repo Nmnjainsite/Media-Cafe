@@ -1,6 +1,6 @@
 # Media-Cafe 
 
- A video library where you you can like,dislike,comment,create playlist, and add the videos to watch later.
+ A video library where you can like,dislike,comment,create playlist, and add the videos to watch later.
 
 [Live Link](https://media-cafe.vercel.app/)
  
