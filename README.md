@@ -26,5 +26,11 @@ Home Page
 * Videos grid, displaying videos categories in grid.
 * Footer, footer features and footer main.
 
- ![home page](https://user-images.githubusercontent.com/101793920/198874103-35599c08-ab2f-43e2-be2a-e998f613ed0b.png)
 
+Video Player Page 
+
+* User can play his selected video.
+* Create playlist.
+* Watch later video.
+
+ ![home page](https://user-images.githubusercontent.com/101793920/198874103-35599c08-ab2f-43e2-be2a-e998f613ed0b.png)
