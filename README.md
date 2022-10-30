@@ -8,15 +8,15 @@
 
 # Pages Till Now
 
-** Landing Page
-** Video Player Page
-** Videos Page 
-** Liked Page
-** Playlist Page
-** Watch Later Page
-** History Page 
-** Login & Signup Page
-** Error 404 Page
+* Landing Page
+* Video Player Page
+* Videos Page 
+* Liked Page
+* Playlist Page
+* Watch Later Page
+* History Page 
+* Login & Signup Page
+* Error 404 Page
 
 # Features 
 
