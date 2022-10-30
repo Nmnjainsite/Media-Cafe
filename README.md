@@ -53,6 +53,8 @@ Playlist Page
 * Delete videos from playlist.
 * User can create playlist.
 
+![playlist](https://user-images.githubusercontent.com/101793920/198875242-cad1b8a0-d5c0-4424-a06a-8c95f361f761.png)
+
 History Page
 * Videos get updated automatic here, after playing videos.
 * User can delete history.
@@ -80,3 +82,4 @@ Login Page
 * javaScript.
 
 
+![videopage](https://user-images.githubusercontent.com/101793920/198875352-d950a975-e2b8-4c41-9173-c66b9f3d244d.png)
