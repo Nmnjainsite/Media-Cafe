@@ -8,7 +8,7 @@
 
 # Pages Till Now
 
-** Landing Page
+**Landing Page
 ** Video Player Page
 ** Videos Page 
 ** Liked Page
