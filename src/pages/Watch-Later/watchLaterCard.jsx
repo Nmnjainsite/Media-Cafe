@@ -15,7 +15,7 @@ import { useHistory } from "../../context/history-context";
 const WatchCard = ({ videos }) => {
   const { _id, src, title, description } = videos;
   const { watchDispatch } = useWatch();
-  const { showModal, setShowModal } = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const { isLoggedIn } = useAuth();
   const { likeState, likeDispatch } = useLike();
   const isLike = getProductDetails(likeState.likeItem, _id);
@@ -80,7 +80,7 @@ const WatchCard = ({ videos }) => {
                 if (isLoggedIn.token) {
                   setShowModal(true);
                 } else {
-                  navigate("/login");
+                  navigate("/signup");
                   toast.error("Let's Login First & Crate The Playlist");
                 }
               }}
