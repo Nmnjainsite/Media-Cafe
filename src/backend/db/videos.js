@@ -13,6 +13,7 @@ export const videos = [
     description:
       " Look for talks on Technology, business, Entertainment and Design plus science, global issues. ",
     category: "TEDx",
+    comments: "nice",
   },
   {
     _id: "kcW4ABcY3zI",
@@ -22,6 +23,7 @@ export const videos = [
     description:
       " A well educated mind vs a well formed mind: Dr. Shashi Tharoor at TEDxGateway 2013 ",
     category: "TEDx",
+    comments: "nice",
   },
   {
     _id: "YRvf00NooN8",
@@ -30,6 +32,7 @@ export const videos = [
     description:
       "Elon Musk talks Twitter, Tesla and how his brain works , future plans for Tesla & Twitter",
     category: "TEDx",
+    comments: "nice",
   },
   {
     _id: "Y7qzo1WMcxs",
@@ -38,6 +41,7 @@ export const videos = [
     description:
       "How To Earn in your Early 20s? By Doing Consistent Work| Aman Dhattarwal | TEDx VIPS ",
     category: "TEDx",
+    comments: "nice",
   },
   {
     _id: "eIho2S0ZahI",
@@ -46,6 +50,7 @@ export const videos = [
     description:
       "How to speak so that people want to listen  &  create an impact || Julian Treasure ",
     category: "TEDx",
+    comments: "nice",
   },
 
   // --------------------coding----------------
@@ -57,6 +62,7 @@ export const videos = [
     description:
       "Jake Archibald: In The Loop setTimeout, micro tasks, requestAnimationFrame, requestIdleCallback",
     category: "coding",
+    comments: "nice",
   },
 
   {
@@ -66,6 +72,7 @@ export const videos = [
     description:
       "React Today and Tomorrow and 90% Cleaner React With Hooks || React Conf 2018",
     category: "coding",
+    comments: "nice",
   },
 
   {
@@ -75,6 +82,7 @@ export const videos = [
     description:
       "Make a JavaScript Drum Kit in Vanilla JS To Learn JavaScript In Deep|| In 2022 By Wes Bos",
     category: "coding",
+    comments: "nice",
   },
 
   {
@@ -84,6 +92,7 @@ export const videos = [
     description:
       "Functional Programming in 40 Minutes By Russ Olsen || GOTO 2018",
     category: "coding",
+    comments: "nice",
   },
 
   {
@@ -93,6 +102,7 @@ export const videos = [
     description:
       "What the heck is the event loop anyway? | Philip Roberts | JSConf EU",
     category: "coding",
+    comments: "nice",
   },
 
   //  --------------------Finance-----------------
@@ -104,6 +114,7 @@ export const videos = [
     description:
       "Warren Buffett reveals his investment strategy and mastering the market",
     category: "Finance",
+    comments: "nice",
   },
 
   {
@@ -113,6 +124,7 @@ export const videos = [
     description:
       "Basics of Stock Market For Beginners Lecture 1 By CA Rachana Phadke Ranade",
     category: "Finance",
+    comments: "nice",
   },
 
   {
@@ -121,6 +133,7 @@ export const videos = [
     src: "https://www.youtube.com/embed/QDWv0l7liHc",
     description: "Meet Pranjal Kamra | Make Money From Money |",
     category: "Finance",
+    comments: "nice",
   },
 
   {
@@ -130,6 +143,7 @@ export const videos = [
     description:
       "The SEVEN Things You NEED To Learn for Your Financial FREEDOM - Robert Kiyosaki",
     category: "Finance",
+    comments: "nice",
   },
 
   {
@@ -139,6 +153,7 @@ export const videos = [
     description:
       "Nithin Kamath Of Zerodha Speaks On The Big Rise In Millennial Traders | Bazaar Corporate Radar",
     category: "Finance",
+    comments: "nice",
   },
 
   // -------------------Videography------------------
@@ -150,6 +165,7 @@ export const videos = [
     description:
       "5 Videography and Editing Tips for  Beginners In 2022 By Brandon Washington",
     category: "videography",
+    comments: "nice",
   },
 
   {
@@ -159,6 +175,7 @@ export const videos = [
     description:
       "A Major Difference Between,Videography & Cinematography By Nick Kelly",
     category: "videography",
+    comments: "nice",
   },
 
   {
@@ -168,6 +185,7 @@ export const videos = [
     description:
       "Photography Startup Business Plan | High Profit Business ideas in India",
     category: "videography",
+    comments: "nice",
   },
 
   {
@@ -176,5 +194,6 @@ export const videos = [
     src: "https://www.youtube.com/embed/CmVA3cWllB8",
     description: "How To Shoot An Event Video: Shooting + Editing Tips!",
     category: "videography",
+    comments: "nice",
   },
 ];

@@ -38,7 +38,7 @@ const PlaylistPage = () => {
         ) : (
           <img
             src="https://cdni.iconscout.com/illustration/premium/thumb/folder-is-empty-4064360-3363921.png"
-            className="empty-img-col-2"
+            className="empty-img-col-playlist"
           ></img>
         )}
       </div>

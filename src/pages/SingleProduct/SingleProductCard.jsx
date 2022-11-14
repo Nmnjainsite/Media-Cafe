@@ -40,7 +40,7 @@ const SingleProductCard = ({ videos }) => {
     }
   };
 
-  const { _id, src, title, description } = videos;
+  const { _id, src, title, description, comments } = videos;
   const { likeState, likeDispatch } = useLike();
   const [showModal, setShowModal] = useState(false);
   const { watchDispatch, watchState } = useWatch();
@@ -167,6 +167,7 @@ const SingleProductCard = ({ videos }) => {
             <button onClick={changeInput} className="comment-btn">
               Comment
             </button>
+
             <div className="comments">
               <img src={update.img} className="person-img"></img>
 

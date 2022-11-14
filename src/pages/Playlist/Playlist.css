@@ -43,7 +43,12 @@
   margin-left: -1rem;
   color: white;
 }
-
+.empty-img-col-playlist {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-left: 34.1%;
+}
 @media (max-width: 850px) {
   .playlist-container {
     display: grid;
@@ -57,5 +62,12 @@
   .playlistpage-container {
     display: grid;
     grid-template-columns: 1fr;
+  }
+  .empty-img-col-playlist {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-left: 5%;
+    width: 100%;
   }
 }
